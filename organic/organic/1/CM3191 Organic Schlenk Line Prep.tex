@@ -1,0 +1,169 @@
+\documentclass[10pt,a4paper]{article}
+\input{common}
+\renewcommand{\doctag}{Schlenk Line 실습 준비}
+\setlength{\parskip}{4.5pt}
+\linespread{1.15}
+
+\begin{document}
+
+\manualtitle{SCHLENK LINE 실습 준비}
+{Week 7 화요일 9/29, 10:50--11:35, GTL \ (Thursday Group A)}
+{근거: CM3191 Organic Lab Manual AY26/27, Exp.\,4 (pp.\,19--27), 조 배정 xlsx, 그리고 Borys, \emph{Organometallics} 2023, 42, 182--196. 이 실습은 9주차(10/15) Grignard 실험의 예행연습입니다. 실습실 장비의 세부(기체 종류, 트랩 냉각 방식 등)는 현장 안내가 우선입니다.}
+
+\begin{callout}{한 줄 요약}
+Schlenk line은 \textbf{``진공으로 공기를 빼고, 질소로 채우는''} 일을 쉽게 하게 해 주는 유리관 장치입니다. 실습에서 익힐 동작은 세 가지입니다. \textbf{(1)} 코크를 돌려 플라스크를 진공 또는 질소에 연결하기, \textbf{(2)} 진공--질소 사이클로 플라스크의 공기와 수분을 없애기, \textbf{(3)} 주사기로 공기에 닿지 않게 액체(THF) 옮기기.
+\end{callout}
+
+% =====================================================================
+\section{왜 이런 장치가 필요한가}
+9주차 실험의 vinylmagnesium bromide(Grignard 시약)는 \textbf{물과 산소를 만나면 바로 망가집니다}. 물과는 즉시 반응해 에틸렌 기체가 되고(매뉴얼 p.\,23의 quench 설명과 같은 반응), 그만큼 케톤과 반응할 시약이 줄어듭니다. 그런데 보통 유리기구 표면에는 눈에 보이지 않는 얇은 물 막이 붙어 있고, 플라스크 안은 공기로 차 있습니다. Schlenk line은 이 둘을 \textbf{반응 전에 없애고}, 반응하는 동안 \textbf{공기가 다시 들어오지 못하게} 막는 장치입니다.
+
+% =====================================================================
+\section{장치의 구조}
+
+\begin{center}
+\begin{tikzpicture}[font=\footnotesize, line width=0.8pt, >={Stealth[length=2.3mm]}]
+% manifolds
+\draw (0,3.2) -- (11,3.2); \draw (0,3.5) -- (11,3.5);
+\node[right, align=left] at (11.1,3.35) {\textbf{진공 매니폴드}};
+\draw (0,2.2) -- (11,2.2); \draw (0,2.5) -- (11,2.5);
+\node[right, align=left] at (11.1,2.35) {\textbf{질소 매니폴드}};
+% ports with stopcocks
+\foreach \x/\l in {3.2/1,5.6/2,8.0/3} {
+  \draw (\x-0.12,3.2) -- (\x-0.12,2.5); \draw (\x+0.12,3.2) -- (\x+0.12,2.5);
+  \draw[fill=white] (\x,2.85) circle (0.28);
+  \draw[line width=1.6pt] (\x-0.2,2.85) -- (\x+0.2,2.85);
+  \draw (\x-0.08,2.57) -- (\x-0.08,1.6); \draw (\x+0.08,2.57) -- (\x+0.08,1.6);
+  \node[right] at (\x+0.1,2.0) {포트 \l};
+}
+\node[align=center] at (5.6,4.15) {이중 코크(double-oblique stopcock): 포트마다 하나.\\돌리는 방향에 따라 포트가 위(진공) 또는 아래(질소)와 연결};
+% vacuum side: trap and pump
+\draw (0,3.35) -- (-0.8,3.35) -- (-0.8,1.9);
+\draw (-1.25,1.9) rectangle (-0.35,0.4);
+\node[left] at (-1.3,1.75) {cold trap};
+\draw[dashed] (-1.5,1.3) rectangle (-0.1,0.2);
+\node[left] at (-1.55,0.6) {냉각 용기};
+\draw (-0.8,0.4) -- (-0.8,-0.4) -- (0.2,-0.4);
+\draw (0.2,-0.8) rectangle (1.7,0.0); \node at (0.95,-0.4) {진공 펌프};
+% gas supply
+\draw[<-] (1.2,2.35) -- (1.2,1.6);
+\node[below right, align=left] at (0.3,1.6) {\ce{N2} 공급\\(실린더·레귤레이터)};
+% gas side: bubbler
+\draw (11,2.35) -- (10.4,2.35);
+\draw (10.4,2.35) -- (10.4,0.9);
+\draw (10.0,0.9) rectangle (10.8,-0.4);
+\fill[pattern=north east lines] (10.02,-0.38) rectangle (10.78,0.15);
+\draw (10.4,0.9) -- (10.4,0.0);
+\foreach \y in {0.3,0.55} \draw (10.55,\y) circle (0.06);
+\node[align=center] at (10.4,-0.85) {oil bubbler\\(기포 = 양압)};
+% flask on port 2
+\draw (5.52,1.6) -- (5.52,1.05); \draw (5.68,1.6) -- (5.68,1.05);
+\node[left] at (5.45,1.35) {고무 호스};
+\draw (5.35,1.05) rectangle (5.85,0.75); \node[left] at (5.3,0.9) {stopcock 어댑터};
+\draw (5.6,0.75) -- (5.6,0.4);
+\draw (5.4,0.2) -- (5.4,0.4) -- (5.8,0.4) -- (5.8,0.2);
+\draw (5.6,-0.5) circle (0.75);
+\draw (6.15,-0.05) -- (6.55,0.3); \draw[fill=gray!60] (6.45,0.2) -- (6.8,0.55) -- (6.95,0.4) -- (6.6,0.05) -- cycle;
+\node[right, align=left] at (7.0,0.1) {고무 셉텀\\(바늘 주입구)};
+\node[below] at (5.6,-1.3) {50 mL 2구 둥근 플라스크};
+\end{tikzpicture}
+\end{center}
+
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\linewidth}{|l|X|}
+\hline
+\textbf{부품} & \textbf{하는 일} \\ \hline
+진공 매니폴드 + 펌프 & 연결된 플라스크 안의 기체를 빨아냅니다 \\ \hline
+질소 매니폴드 + 실린더 & 건조한 질소를 공급합니다. 공기와 달리 산소와 물이 없습니다 \\ \hline
+이중 코크 & 포트를 \textbf{진공 / 닫힘 / 질소} 중 하나에 연결합니다. 매뉴얼의 ``turn the valve on the two-way manifold to vacuum/nitrogen''이 이 조작입니다 \\ \hline
+Cold trap & 플라스크에서 빨려 나온 용매 증기를 얼려 잡아서, 펌프 오일을 보호합니다 \\ \hline
+Oil bubbler & 질소 라인의 출구입니다. \textbf{기포가 천천히 나오면 라인 안이 대기압보다 약간 높은 ``양압''}이라는 뜻이고, 공기가 거꾸로 들어오지 못합니다 \\ \hline
+셉텀 & 고무 마개. 바늘로 찔러 액체를 넣고 빼도 구멍이 다시 막힙니다 \\ \hline
+\end{tabularx}
+\renewcommand{\arraystretch}{1}
+
+\subsection*{코크 위치 읽는 법}
+\begin{center}
+\begin{tikzpicture}[font=\footnotesize, line width=0.8pt]
+\foreach \x/\t/\a in {0/진공에 연결/90, 5/닫힘/0, 10/질소에 연결/-90} {
+  \begin{scope}[shift={(\x,0)}]
+  \draw (-1.3,0.95) -- (1.3,0.95) node[right]{진공};
+  \draw (-1.3,-0.95) -- (1.3,-0.95) node[right]{\ce{N2}};
+  \draw (0,0.95) -- (0,0.55); \draw (0,-0.95) -- (0,-0.55);
+  \draw[fill=white] (0,0) circle (0.55);
+  \draw (0.55,0) -- (1.2,0) node[right]{플라스크};
+  \ifnum\a=0 \draw[line width=2.2pt] (-135:0.4) -- (45:0.4);
+  \else \draw[line width=2.2pt] (0,0) -- (\a:0.45); \draw[line width=2.2pt] (0,0) -- (0.45,0); \fi
+  \node[below] at (0,-1.25) {\textbf{\t}};
+  \end{scope}
+}
+\end{tikzpicture}
+\end{center}
+{\small 굵은 선은 코크 안의 통로를 개념적으로 그린 것입니다. 실제 코크 모양과 표시는 장비마다 다르므로, \textbf{실습 때 TA에게 ``지금 이 방향이 진공인가요?''를 확인}하고 본인이 알아보기 쉬운 표시를 기억해 두세요 \confirm{실습실 코크 형태}.}
+
+% =====================================================================
+\section{동작 1: 진공--질소 사이클 (플라스크 건조)}
+매뉴얼 Exp.\,4 pp.\,20--21의 절차를 단계와 이유로 나눴습니다.
+
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\linewidth}{|c|X|X|}
+\hline
+\textbf{\#} & \textbf{할 일} & \textbf{이유 / 주의} \\ \hline
+1 & 교반 막대를 넣은 2구 플라스크의 옆 목에 셉텀, 가운데 목에 stopcock 어댑터를 끼우고 라인에 연결 & 모든 연결부가 꽉 맞아야 진공이 걸립니다 \\ \hline
+2 & 코크를 \textbf{진공}으로 & 플라스크 안의 공기가 빠집니다 \\ \hline
+3 & \textbf{hot air gun}으로 플라스크 전체를 골고루 가열 & 유리 표면의 물 막이 증발하고, 진공이 바로 빼냅니다. \textbf{매뉴얼 경고: 300--500\,\si{\celsius}이므로 후드 안에 인화성 물질이 없어야 함} \\ \hline
+4 & 몇 분 식힌 뒤 코크를 \textbf{질소}로 (천천히) & 빈 플라스크가 질소로 채워집니다. 너무 빨리 돌리면 버블러 오일이 빨려 올라갈 수 있어 천천히 돌립니다 \\ \hline
+5 & 2--4를 \textbf{한 번 더} 반복 (총 2회) & 한 번으로는 공기가 조금 남습니다. 반복할수록 남는 양이 곱으로 줄어듭니다 \\ \hline
+6 & 실온까지 식힌 뒤에 시약 투입 & 뜨거운 플라스크에 THF를 넣으면 끓어오릅니다 \\ \hline
+\end{tabularx}
+\renewcommand{\arraystretch}{1}
+{\small 매뉴얼은 이 과정을 ``flame-drying''이라 부르지만 실제로는 불꽃이 아니라 열풍기를 씁니다. 진공이 걸린 유리기구는 금이 가 있으면 깨질 수 있으므로(내파), \textbf{연결 전에 플라스크의 금이나 별 모양 흠을 확인}하세요.}
+
+% =====================================================================
+\section{동작 2: 주사기로 공기에 닿지 않게 옮기기}
+실습의 ``THF로 하는 hands-on''은 9주차에 7.5 mL Grignard 용액을 옮기는 동작(매뉴얼 pp.\,22--23, Figure 3--4)을 THF로 미리 연습하는 것으로 보입니다 \confirm{실습 내용}.
+
+\begin{enumerate}[leftmargin=6mm,itemsep=1.2mm]
+\item \textbf{주사기 퍼지}: 바늘을 질소가 흐르는 곳(라인의 셉텀 포트나 질소 풍선)에 꽂고 질소를 빨아들였다가 밖에서 뱉습니다. 이를 \textbf{2--3회} 반복합니다. 주사기와 바늘 속에 남은 공기가 그대로 플라스크로 들어가기 때문입니다.
+\item \textbf{시약병도 질소 아래}: 매뉴얼은 병을 클램프로 고정하고 질소(풍선 또는 라인)를 연결하라고 합니다. 액체를 빼내면 병 안에 빈 공간이 생기는데, 그 자리를 공기가 아니라 질소가 채우게 하려는 것입니다.
+\item \textbf{원하는 부피만큼 뽑기}: 바늘 끝을 액체 속에 넣고 천천히 당깁니다. 기포가 들어오면 바늘을 위로 향하게 한 뒤 기포만 병 안으로 되돌립니다.
+\item \textbf{질소 쿠션}: 바늘을 병에서 빼기 직전에 \textbf{바늘 끝을 액면 위로 올려 질소를 조금 더 빨아들입니다}(매뉴얼 p.\,22). 이 질소층이 바늘 끝의 액체를 공기로부터 막고, 옮기는 도중 방울이 떨어지는 것도 막아 줍니다.
+\item \textbf{플라스크에 넣기}: 셉텀을 찔러 먼저 질소 쿠션을 넣고, 이어서 액체를 \textbf{한 방울씩} 넣습니다. Grignard는 반응열이 나므로 9주차에는 얼음 수조에서 넣습니다.
+\item \textbf{뒷정리}: 남은 Grignard는 폐액 후드에서 포화 \ce{NH4Cl}로 quench하고(에틸렌 기체 발생), 주사기는 \textbf{sharps 전용 통}에 버립니다(매뉴얼 p.\,23).
+\end{enumerate}
+
+\begin{callout}{바늘 안전}
+바늘에는 캡을 다시 씌우지 않는 것이 원칙입니다(재캡핑 중 찔리는 사고가 흔함). 바늘 끝이 항상 본인과 옆 사람을 향하지 않게 들고, 쓴 바늘은 바로 sharps 통에 넣으세요. 실습실 규칙이 다르면 그것을 따릅니다 \confirm{재캡핑 규칙}.
+\end{callout}
+
+% =====================================================================
+\section{안전 포인트 정리}
+\begin{itemize}[leftmargin=5mm,itemsep=0.8mm]
+\item \textbf{THF}: 인화성이 매우 높습니다. 오래 공기에 노출되면 폭발성 과산화물을 만들 수 있는 용매이기도 합니다. hot air gun을 쓰는 동안에는 후드 안에 THF 병을 두지 않습니다.
+\item \textbf{Hot air gun}: 끈 뒤에도 노즐이 한동안 뜨겁습니다. 코드나 호스에 닿지 않게 내려놓습니다.
+\item \textbf{양압 유지}: 질소를 흘리는 동안 계를 완전히 밀폐하면 압력이 올라 셉텀이 튀어나갈 수 있습니다. 항상 버블러를 통해 빠져나갈 길이 있어야 합니다.
+\item \textbf{Cold trap}: 액체 질소로 냉각하는 트랩이라면, 트랩을 공기 중에 열어 둔 채 냉각하면 산소가 응축해 위험한 액체 산소가 생길 수 있습니다. 트랩 조작은 TA 지시대로만 합니다 \confirm{트랩 냉각 방식}.
+\item \textbf{마무리}: 매뉴얼 p.\,23대로 코크를 OFF로 돌린 뒤 플라스크를 분리하고, 셉텀으로 막아서 자기 후드로 가져갑니다.
+\end{itemize}
+
+% =====================================================================
+\section{실습 전 체크리스트와 TA에게 물어볼 것}
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+\cbox\ 매뉴얼 Exp.\,4 pp.\,19--23 한 번 읽기 & \cbox\ 이 문서 2--4절 읽기 \\
+\cbox\ 실험복·보안경·장갑 & \cbox\ 필기구 (코크 방향 스케치용) \\
+\end{tabularx}
+
+\textbf{현장에서 확인할 것}
+\begin{enumerate}[leftmargin=6mm,itemsep=0.5mm]
+\item 이 라인의 코크는 어느 방향이 진공이고 어느 방향이 질소인가?
+\item 불활성 기체는 질소인가 아르곤인가? Cold trap은 무엇으로 냉각하는가?
+\item 진공--질소 사이클에서 진공은 몇 분 유지하는가? 버블러 기포 속도는 어느 정도가 적당한가?
+\item 조 배정표의 2--3명 묶음(본인은 B7, D1 Koh Liang Han과 한 묶음)이 라인 공유 단위인가? 9주차 Grignard 반응은 각자 하는가, 함께 하는가?
+\item 9주차에 만든 조생성물(crude linalool)은 11주차 컬럼 때까지 어디에 어떻게 보관하는가?
+\end{enumerate}
+
+\vspace{2mm}
+\textbf{실습 후 메모} \ (코크 방향, TA가 강조한 점, 헷갈렸던 동작)
+\ruled{6}
+
+\end{document}

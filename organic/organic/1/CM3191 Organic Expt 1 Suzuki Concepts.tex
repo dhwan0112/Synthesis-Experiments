@@ -1,0 +1,258 @@
+\documentclass[10pt,a4paper]{article}
+\input{common}
+\renewcommand{\doctag}{Expt.\ 1 \textemdash\ Concepts}
+\setlength{\parskip}{4pt}
+
+\begin{document}
+
+\manualtitle{ORGANIC EXPERIMENT 1 \textemdash\ 개념 정리}
+{물에서의 Suzuki--Miyaura 교차 커플링: 원리, 계산, 분석 해석}
+{근거: CM3191 Organic Lab Manual AY26/27 (Exp.\,1, pp.\,2--7), CM3191 Org L1 슬라이드, 그리고 본문 끝 참고문헌. 매뉴얼에 없는 수치는 직접 계산했고 계산 과정을 함께 적었습니다.}
+
+\begin{callout}{한 장 요약}
+\begin{itemize}[leftmargin=4mm,itemsep=0.5mm,topsep=0.5mm]
+\item \textbf{반응}: 4-bromobenzoic acid + phenylboronic acid \textrightarrow\ 4-phenylbenzoic acid(biphenyl-4-carboxylic acid). Pd 촉매가 두 아릴 조각을 Pd 위에 모은 뒤 새 C--C 단일결합으로 연결합니다(L1 p.\,4).
+\item \textbf{한계 시약}: 4-bromobenzoic acid 1.69 mmol. \ce{PhB(OH)2} 1.21 eq, \ce{Na2CO3} 2.96 eq, Pd 0.0148 mol\% (= 148 ppm). \textbf{이론 수득량 0.335 g}.
+\item \textbf{물에서 되는 이유}: 염기 조건에서 두 기질이 모두 음이온(카복실산염, 붕산염)이 되어 물에 녹고, 촉매 리간드도 수용성입니다. 반응 후에는 산을 넣어 pH를 바꾸는 것만으로 생성물이 침전됩니다.
+\item \textbf{분석 포인트}: IR의 카복실산 O--H(넓음)와 C=O. \textsuperscript{1}H NMR에서 치환되지 않은 페닐기의 5H 패턴(특히 1H 삼중선)이 출발물질과 생성물을 구별하는 핵심입니다.
+\end{itemize}
+\end{callout}
+
+% =====================================================================
+\section{촉매 순환 (catalytic cycle)}
+
+\begin{center}
+\begin{tikzpicture}[font=\small, >={Stealth[length=2.6mm]}, line width=0.7pt]
+\node[draw, rounded corners, inner sep=4pt, fill=white] (pd0) at (0,2.8) {\ce{Pd^0L_n}};
+\node[draw, rounded corners, inner sep=4pt, fill=white] (oa)  at (4.6,0) {\ce{Ar-Pd^{II}L_n-Br}};
+\node[draw, rounded corners, inner sep=4pt, fill=white] (oh)  at (0,-2.8) {\ce{Ar-Pd^{II}L_n-OH}};
+\node[draw, rounded corners, inner sep=4pt, fill=white] (tm)  at (-4.6,0) {\ce{Ar-Pd^{II}L_n-Ph}};
+\draw[->] (pd0) to[bend left=28] (oa);
+\draw[->] (oa) to[bend left=28] (oh);
+\draw[->] (oh) to[bend left=28] (tm);
+\draw[->] (tm) to[bend left=28] (pd0);
+% step labels (inside)
+\node[align=center, font=\footnotesize] at (2.1,1.0) {\textbf{\ding{172} 산화적 첨가}\\oxidative addition\\Pd(0)\,\textrightarrow\,Pd(II)};
+\node[align=center, font=\footnotesize] at (2.1,-1.0) {\textbf{\ding{173} 리간드 교환}\\\ce{Br^-} \textrightarrow\ \ce{OH^-}};
+\node[align=center, font=\footnotesize] at (-2.1,-1.0) {\textbf{\ding{174} 금속교환}\\transmetalation\\Ph: B\,\textrightarrow\,Pd};
+\node[align=center, font=\footnotesize] at (-2.1,1.0) {\textbf{\ding{175} 환원적 제거}\\reductive elimination\\Pd(II)\,\textrightarrow\,Pd(0)};
+% inputs / outputs (outside)
+\node (arbr) at (5.6,2.7) {\ce{Ar-Br} in};
+\draw[->, dashed] (arbr.west) to[bend right=10] (3.05,2.0);
+\node (prod) at (-5.6,2.7) {\ce{Ar-Ph} out};
+\draw[->, dashed] (-3.05,2.0) to[bend left=10] (prod.east);
+\node (base) at (5.8,-2.6) {\ce{OH^-} in};
+\draw[->, dashed] (base.west) to[bend left=10] (3.05,-2.0);
+\node (brm) at (3.4,-3.7) {\ce{Br^-} out};
+\draw[->, dashed] (2.3,-2.45) to[bend right=10] (brm.north west);
+\node[align=center] (boron) at (-6.1,-2.6) {\ce{PhB(OH)2} in\\{\footnotesize (또는 \ce{PhB(OH)3^-})}};
+\draw[->, dashed] (boron.east) to[bend right=10] (-3.05,-2.0);
+\node (boh3) at (-3.4,-3.7) {\ce{B(OH)3} out};
+\draw[->, dashed] (-2.3,-2.45) to[bend left=10] (boh3.north east);
+\end{tikzpicture}\\[1mm]
+{\footnotesize Ar = \ce{4-(^{-}O2C)C6H4}; \ L = 탈양성자화된 2-amino-4,6-dihydroxypyrimidine 리간드; \ Pd 0.0148 mol\%. 금속교환은 oxo-palladium 경로로 그렸습니다(본문 참조).}
+\end{center}
+
+\textbf{\ding{172} 산화적 첨가.} Pd(0)이 \ce{C-Br} 결합 사이로 끼어들어 Pd의 산화수가 2 늘고 리간드 두 개(Ar, Br)를 얻습니다(L1 p.\,5). 아릴 할라이드의 반응성은 \textbf{Ar--I $>$ Ar--Br $\approx$ Ar--OTf $\gg$ Ar--Cl $\gg$ Ar--F}입니다(L1 p.\,10). 이 순서는 C--X 결합이 강해지는 순서와 반대입니다. 결합이 강할수록 산화적 첨가가 느려지기 때문입니다. 아릴 브로마이드는 반응성과 가격 사이의 절충점이라 교육용 실험에서 흔히 씁니다. 반면 아릴 클로라이드는 보통 전자가 풍부하고 부피가 큰 phosphine(예: XPhos)이 필요합니다. L1 연습문제(pimodivir)에서 클로라이드 \textbf{14}의 커플링에 \ce{Pd(OAc)2}/X-Phos를 쓴 것도 같은 맥락입니다(8절).
+
+\textbf{\ding{173} \& \ding{174} 금속교환과 염기.} 유기붕소 화합물은 공유결합성이 커서 그대로는 금속교환이 잘 일어나지 않습니다. 그래서 염기가 반드시 필요합니다(L1 p.\,9). 이 단계에는 두 가지 경로가 제안되어 있습니다.
+\begin{itemize}[leftmargin=5mm,itemsep=0.5mm,topsep=0.5mm]
+\item \textbf{Boronate 경로 (L1의 설명)}: \ce{PhB(OH)2 + OH^- -> PhB(OH)3^-}. 음전하를 띤 4배위 ``ate'' 착물은 Ph기의 친핵성이 커서 \ce{Ar-Pd-Br}의 Br을 치환하며 Ph를 넘겨줍니다.
+\item \textbf{Oxo-palladium 경로}: 먼저 \ce{Ar-Pd-Br}이 \ce{Ar-Pd-OH}로 바뀌고, 이 Pd--OH가 중성 보론산과 Pd--O--B 다리를 만든 뒤 Ph가 옮겨갑니다(위 그림은 이 경로로 그렸습니다).
+\end{itemize}
+Carrow와 Hartwig(2011)은 분리한 Pd 착물로 두 반응의 속도를 비교했습니다. 그 결과 \textbf{약염기·수계 조건에서는 Pd--OH + 보론산 경로가 우세하다}고 결론지었습니다. 반면 일부 계산 연구는 boronate 경로의 장벽이 더 낮다고 보고해, 조건에 따라 달라지는 미해결 쟁점으로 남아 있습니다. \textbf{시험이나 proforma에서는 강의 설명(boronate)을 기본으로 쓰고}, 고찰에서 다른 경로를 언급하는 정도가 적절해 보입니다.
+
+\textbf{\ding{175} 환원적 제거.} Pd 위에서 cis로 놓인 Ar과 Ph가 결합하며 떨어져 나오고, Pd(0)이 재생됩니다. 새 σ결합은 두 ``옛 리간드'' 사이에 생깁니다(L1 p.\,5).
+
+\textbf{전촉매 활성화.} 투입한 것은 \ce{Pd(OAc)2}, 즉 Pd(II)입니다. 순환에 들어가려면 먼저 Pd(0)으로 환원되어야 합니다. phosphine이 없는 계에서는 보론산 두 분자가 차례로 금속교환한 뒤 환원적 제거로 \ce{Ph-Ph}(biphenyl, 호모커플링)를 내놓으며 Pd(0)이 생기는 경로가 흔히 제안됩니다. 다만 Pd 양이 0.25 µmol에 불과해 이로 인한 biphenyl도 최대 0.25 µmol 수준이며, 수율에는 사실상 영향이 없습니다.
+
+\subsection*{전체 반응식 (염기 조건, 물질수지 확인)}
+\[
+\ce{Br-C6H4-CO2^- + PhB(OH)2 + OH^- -> Ph-C6H4-CO2^- + B(OH)3 + Br^-}
+\]
+{\small 좌변과 우변의 원자(C, H, B, Br, O)와 전하($-2$)가 일치합니다. 염기 조건이므로 \ce{B(OH)3}는 다시 \ce{B(OH)4^-}로 존재합니다. \ce{OH^-}는 탄산염의 가수분해(\ce{CO3^2- + H2O <=> HCO3^- + OH^-})에서 공급됩니다.}
+
+% =====================================================================
+\section{이 실험에서 염기(\ce{Na2CO3})가 하는 일}
+
+\ce{Na2CO3}는 5.0 mmol로 2.96 eq입니다. 촉매 순환의 염기 역할 외에도 세 가지 일을 동시에 합니다.
+\begin{enumerate}[leftmargin=6mm,itemsep=0.5mm]
+\item \textbf{가용화}: 4-bromobenzoic acid(p$K_\text{a}$는 benzoic acid의 4.2와 비슷)를 카복실산염으로 바꿔 물에 녹입니다. 매뉴얼이 ``모든 고체가 녹을 때까지'' 촉매 투입을 미루는 이유입니다.
+\item \textbf{붕소 활성화}: 보론산을 붕산염(\ce{PhB(OH)3^-})으로 만들거나, Pd--OH를 형성하게 합니다.
+\item \textbf{부산물 중화}: 반응에서 생기는 HBr 등가물과 \ce{B(OH)3}를 중화해 pH를 유지합니다.
+\end{enumerate}
+\textbf{초기 pH 추정}: \ce{CO3^2-}의 $K_\text{b} = K_\text{w}/K_\text{a2} = 10^{-14}/10^{-10.33} = 2.1\times10^{-4}$입니다. 따라서 $[\ce{OH^-}] \approx \sqrt{K_\text{b}\times0.5} = 1.0\times10^{-2}$ M, 즉 \textbf{pH $\approx$ 12}입니다. 카복실산 중화로 일부 소모되어도 반응 중 강한 염기성이 유지됩니다.
+
+% =====================================================================
+\section{왜 물인가 (L1 p.\,10의 두 질문)}
+
+\textbf{Q1. 물을 용매로 쓸 때의 장점과 어려움은?}\par
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\linewidth}{|X|X|}
+\hline
+\textbf{장점} & \textbf{어려움} \\ \hline
+\footnotesize 무독성·불연성·저렴. toluene, DMF 같은 기존 용매를 대체합니다(매뉴얼 p.\,2). \newline
+유기붕소 부산물(붕산염)과 무기염이 수용액에 남아 분리가 쉽습니다(L1 p.\,7). \newline
+공기와 물에 안정한 보론산, phosphine이 없는 촉매 덕분에 불활성 분위기가 필요 없습니다. \newline
+pH만 바꿔 생성물을 침전시킬 수 있어 추출 용매가 필요 없습니다.
+&
+\footnotesize 대부분의 유기 기질은 물에 녹지 않습니다. \newline
+전형적인 Pd--phosphine 촉매는 물에 녹지 않으므로 수용성 리간드가 필요합니다. \newline
+고온·강염기 수용액에서는 protodeboronation(\ce{PhB(OH)2 -> PhH})이 경쟁할 수 있습니다. \newline
+물은 증발 잠열이 커서 제거에 에너지가 많이 듭니다. \newline
+Pd가 수계 폐액으로 들어가므로 금속 폐액으로 따로 처리해야 합니다.
+\\ \hline
+\end{tabularx}
+\renewcommand{\arraystretch}{1}
+
+\textbf{Q2. 이 반응은 왜 물에서 잘 되는가?}
+\begin{itemize}[leftmargin=5mm,itemsep=0.5mm,topsep=0.5mm]
+\item \textbf{기질 설계}: 할로젠화물에 COOH라는 ``수용성 손잡이''가 있습니다. 염기에서 카복실산염이 되고, 보론산도 붕산염이 되어 \textbf{두 반응물 모두 균일 수용액에} 존재합니다.
+\item \textbf{촉매 설계}: 2-amino-4,6-dihydroxypyrimidine은 NaOH로 탈양성자화되면(슬라이드 11의 NaO-치환 구조) 물에 녹습니다. 이 리간드로 만든 Pd 착물은 phosphine 없이도 수용액에서 Suzuki 커플링을 촉매한다고 보고되었습니다(Chalker, Wood, Davis, 2009). 이 실험은 그 촉매를 교육용으로 옮긴 Hamilton 등(2013)의 절차를 따릅니다.
+\item \textbf{분리 설계}: 생성물도 염기에서는 녹아 있다가, 산을 넣으면 중성 카복실산이 되어 찬물에서 침전합니다. ``녹여서 반응시키고, pH로 꺼낸다''는 구조입니다.
+\end{itemize}
+
+% =====================================================================
+\section{촉매량, TON, TOF}
+
+\textbf{촉매량}: Pd $= 1.0\ \text{mL}\times0.25\ \text{mM} = 0.25\ \mu\text{mol}$입니다. 기질 1.691 mmol 대비 \textbf{0.0148 mol\%}로, 슬라이드의 ``0.015\%''와 일치합니다. 몰비로는 148 ppm입니다.
+
+\textbf{정의 (L1 p.\,19)}:
+\[
+\text{TON} = \frac{n_\text{product}}{n_\text{Pd}}, \qquad
+\text{TOF} = \frac{\text{TON}}{t}
+\]
+TON은 무차원이고, TOF 단위는 \si{\per\second}, \si{\per\minute}, \si{\per\hour} 중 하나로 명시해야 합니다.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{분리 수율} & \textbf{생성물 (g)} & \textbf{TON} & \textbf{TOF (\si{\per\minute}, 30 min)} & \textbf{TOF (\si{\per\hour})} \\ \hline
+50\% & 0.168 & 3383 & 113 & 6765 \\ \hline
+70\% & 0.235 & 4736 & 158 & 9472 \\ \hline
+90\% & 0.302 & 6089 & 203 & 12178 \\ \hline
+100\% (상한) & 0.335 & 6765 & 226 & 13531 \\ \hline
+\end{tabular}
+\renewcommand{\arraystretch}{1}
+\end{center}
+{\small \textbf{보고서에서 밝혀야 할 가정.} (i) \textbf{분리 수율 기준}이므로 재결정 손실만큼 TON이 과소평가됩니다. 전환율 기준 TON은 이보다 큽니다. (ii) 투입한 Pd가 \textbf{전부 활성}이라고 가정했습니다. 실제 활성종은 일부일 수 있어 ``site당'' 값은 더 클 수 있습니다. (iii) 반응이 30분보다 일찍 끝났다면 TOF는 과소평가됩니다. 즉 이 값은 30분 평균값입니다.}
+
+% =====================================================================
+\section{후처리: 산-염기 화학으로 보는 각 단계}
+
+\textbf{산성화 (1 M HCl 20 mL = 20 mmol).}
+\[
+\ce{CO3^2- + 2 H+ -> CO2 ^ + H2O}, \qquad \ce{Ph-C6H4-CO2^- + H+ -> Ph-C6H4-CO2H v}
+\]
+\begin{itemize}[leftmargin=5mm,itemsep=0.5mm,topsep=0.5mm]
+\item 탄산염 5.0 mmol을 \ce{CO2}까지 없애는 데 필요한 산은 10 mmol입니다. HCl 20 mmol은 이보다 약 10 mmol 많습니다. 반응 중 카복실산이 내놓은 양성자는 산성화 때 도로 붙으므로 알짜 효과가 없습니다.
+\item 과량 \ce{H+} 약 10 mmol이 부피 약 51 mL(반응액 11 + HCl 20 + 물 20)에 녹아 있으므로 $[\ce{H+}]\approx 0.20$ M, \textbf{pH $\approx$ 0.7}로 계산됩니다. 생성물(p$K_\text{a}\approx4$)은 사실상 100\% 양성자화됩니다.
+\item \textbf{기체}는 \ce{CO2}입니다. HCl을 한 방울씩 넣는 이유는 거품이 넘치는 것을 막기 위해서입니다. \textbf{얼음 수조}는 중화열을 흡수하고 생성물의 용해도를 낮춥니다.
+\item 물 20 mL를 넣고 10분 교반하면 NaCl, 붕산, 남은 보론산 같은 수용성 물질이 녹아 나가고, 침전이 숙성되어 거르기 쉬워집니다.
+\end{itemize}
+
+\textbf{재결정 (에탄올, HCl 3 mL 첨가).}
+\begin{itemize}[leftmargin=5mm,itemsep=0.5mm,topsep=0.5mm]
+\item 원리는 \textbf{뜨거울 때는 잘 녹고, 차가울 때는 덜 녹는} 용매 하나를 쓰는 것입니다. 가장 흔한 수율 손실 원인은 뜨거운 에탄올을 너무 많이 넣는 것입니다.
+\item \textbf{HCl을 넣는 이유}: 조생성물에 남은 카복실산염이나 탄산염을 중성 산으로 바꿔 한 가지 형태로 결정화시키기 위해서입니다. 염 형태로 남으면 용해도와 녹는 거동이 달라집니다.
+\item \textbf{불순물의 행방}: biphenyl(호모커플링)은 에탄올에 잘 녹아 모액에 남습니다. 붕소 부산물도 대부분 모액이나 세척액으로 빠집니다. 반면 \textbf{미반응 4-bromobenzoic acid는 생성물과 성질이 비슷해 일부 함께 결정화될 수 있으므로} NMR로 확인해야 합니다.
+\item \textbf{천천히 식히는 이유}: 결정이 천천히 자라야 격자에 불순물이 덜 끼어 순도가 높아집니다.
+\item \textbf{수율이 100\%를 넘는다면} 건조가 덜 되어 물이나 에탄올이 남았거나 무기염이 섞였다는 뜻입니다. IR의 넓은 O--H와 NMR의 \ce{H2O}/EtOH 신호로 뒷받침할 수 있습니다.
+\end{itemize}
+
+% =====================================================================
+\section{예상 분석 결과와 해석}
+
+\subsection*{IR (ATR)}
+아래는 일반적인 작용기 흡수 범위이며(Pavia 등), 실제 값은 본인 스펙트럼에서 읽어야 합니다.
+\begin{center}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\linewidth}{|l|c|X|}
+\hline
+\textbf{진동} & \textbf{범위 (\si{\per\centi\metre})} & \textbf{해석} \\ \hline
+O--H 신축 (카복실산 이량체) & 3300--2500, 매우 넓음 & 수소결합 이량체의 특징. C--H 신축과 겹칩니다 \\ \hline
+C=O 신축 & 약 1710--1680 & 방향족 고리와 짝지어져 포화 카복실산보다 낮은 쪽에 나옵니다 \\ \hline
+방향족 C=C & 약 1600, 1500--1450 & 두 벤젠 고리 \\ \hline
+C--O 신축 & 1320--1210 & 카복실산 \\ \hline
+C--H 면외 굽힘 & 약 860--800 / 770--730 \& 710--690 & para-이치환 고리 / 일치환 페닐 고리 \\ \hline
+\end{tabularx}
+\renewcommand{\arraystretch}{1}
+\end{center}
+{\small 출발물질에도 카복실산 신호가 있으므로 IR만으로 커플링 여부를 증명하기는 어렵습니다. \textbf{일치환 페닐의 면외 굽힘(약 750, 690)}이 새로 나타나는지가 보조 근거가 됩니다.}
+
+\subsection*{\textsuperscript{1}H NMR (DMSO-$d_6$, 문헌 피크 목록 기준)}
+\begin{center}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\linewidth}{|c|c|c|X|}
+\hline
+\textbf{δ (ppm)} & \textbf{다중도} & \textbf{적분} & \textbf{귀속} \\ \hline
+13.05 & br s & 1H & COOH (교환성, 넓거나 약하게 보일 수 있음) \\ \hline
+8.07 & d, $J\approx8.4$ Hz & 2H & 가운데 고리, COOH의 ortho H (AA$'$BB$'$) \\ \hline
+7.82 & d, $J\approx8.4$ Hz & 2H & 가운데 고리, 페닐 쪽 H (AA$'$BB$'$) \\ \hline
+7.75 & d & 2H & 말단 페닐 ortho H \\ \hline
+7.52 & t & 2H & 말단 페닐 meta H \\ \hline
+7.44 & t & 1H & 말단 페닐 para H \\ \hline
+\end{tabularx}
+\renewcommand{\arraystretch}{1}
+\end{center}
+{\small 출처: ChemicalBook 스펙트럼 DB, 4-Biphenylcarboxylic acid (CAS 92-92-2), 400 MHz 피크 목록에서 봉우리 중심을 읽은 값. 목록에 용매 표기는 없지만 COOH가 13.05 ppm에 관측되므로 DMSO-$d_6$로 판단됩니다. 본인 스펙트럼은 농도·온도에 따라 약간 다를 수 있으므로 보고서에는 본인 값을 쓰고 이 값과 비교하세요. 가운데 고리의 para-이치환 패턴은 엄밀히 AA$'$BB$'$ 스핀계이지만 겉보기에는 두 개의 ``doublet''으로 보입니다.}
+
+\textbf{출발물질과 불순물 판별.}
+\begin{itemize}[leftmargin=5mm,itemsep=0.5mm,topsep=0.5mm]
+\item \textbf{4-Bromobenzoic acid}: 방향족 신호가 2H doublet 두 개뿐입니다. \textbf{7.52(t, 2H)와 7.44(t, 1H)는 생성물에만} 나타나므로, 이 두 신호의 적분을 기준으로 잔류 출발물질의 비율을 추정할 수 있습니다.
+\item \textbf{Biphenyl}(호모커플링): COOH가 없고 7.3--7.7 영역에만 신호가 나옵니다.
+\item \textbf{Benzoic acid}(탈브로민화 부반응 가능성): 일치환 패턴과 COOH를 함께 가지지만, AA$'$BB$'$ doublet 쌍이 없습니다.
+\item \textbf{용매 잔류 신호 (DMSO-$d_6$)}: DMSO 2.50, \ce{H2O} 3.33, EtOH 1.06 (t) / 3.44 (q) / 4.35 (OH)(Fulmer 등, 2010). 재결정 용매인 EtOH가 보이면 건조 부족의 증거입니다.
+\end{itemize}
+
+% =====================================================================
+\section{왜 반응 바이알인가 (L1 pp.\,14--15)}
+L1 슬라이드 15의 비교를 이 실험에 맞춰 보면 다음과 같습니다. 부피가 약 11 mL로 작고, 70\,\si{\celsius}에서 30분 동안 \textbf{뚜껑을 닫아 증발 없이} 가열해야 합니다. 또 여러 학생의 바이알을 \textbf{공용 히팅 블록}에 동시에 꽂아야 합니다. 이런 조건에는 바이알이 적합합니다. RBF는 환류, 회전증발, Schlenk line처럼 진공이나 유리 접합부가 필요한 작업에 유리합니다. 실험 4(Grignard)에서 2구 RBF를 쓰는 것과 대비해 보세요.
+
+% =====================================================================
+\section{L1 연습문제: pimodivir의 11과 14}
+
+\begin{center}
+\setchemfig{atom sep=1.7em}
+\begin{tabular}{c@{\hspace{16mm}}c}
+\chemfig{*6(-N=-(-F)=-*5(-(-Bpin)=-N(-Ts)-)=)} &
+\chemfig{*6(=N-(-Cl)=N-(-NH-R)=(-F)-)} \\[1mm]
+\textbf{11} & \textbf{14} \quad {\footnotesize R = (2S,3S)-2-(ethoxycarbonyl)bicyclo[2.2.2]oct-3-yl}
+\end{tabular}
+\end{center}
+\begin{itemize}[leftmargin=5mm,itemsep=0.5mm,topsep=0.5mm]
+\item \textbf{11}: 5-fluoro-3-(pinacolatoboryl)-1-tosyl-7-azaindole. 브로마이드 \textbf{10}의 C3--Br이 Miyaura 붕소화(\ce{B2pin2}, \ce{Pd(OAc)2}/\ce{PPh3}, KOAc)로 C3--Bpin이 된 것입니다. \textbf{약염기 KOAc}를 쓰는 이유는, 생성된 Bpin이 남은 \textbf{10}과 Suzuki 커플링을 일으키는 것을 억제하기 위해서입니다(Ishiyama 등, 1995).
+\item \textbf{14}: ethyl (2S,3S)-3-[(2-chloro-5-fluoropyrimidin-4-yl)amino]bicyclo[2.2.2]octane-2-carboxylate. 완제품 pimodivir는 azaindole C3과 pyrimidine C2가 연결된 구조입니다. 따라서 C2에 Cl이 있어야 합니다. 2-클로로피리미딘은 전자가 부족해 일반 아릴 클로라이드보다는 산화적 첨가가 쉬운 편이지만, 여전히 C--Br보다 느리고 기질에 질소가 많아 Pd에 달라붙을 수 있습니다. 그래서 전자가 풍부하고 부피가 큰 X-Phos 같은 리간드를 씁니다.
+\item \textbf{15}에서 pimodivir로 가려면 ethyl ester가 COOH로, N-Ts가 N--H로 바뀌어야 합니다. 슬라이드의 마지막 두 조작(HCl, 이어 NaOH 수용액)이 이 변환을 담당하며, NaOH가 ester 가수분해를 맡는 것은 분명합니다. 구조는 Wikipedia/PubChem의 IUPAC명으로 대조했습니다. 각 단계 시약의 정확한 역할은 강의 해설로 확인하세요 \confirm{강의 해설}.
+\end{itemize}
+
+% =====================================================================
+\section{보고서 고찰에 쓸 만한 질문}
+\begin{enumerate}[leftmargin=6mm,itemsep=0.5mm]
+\item 수율 손실은 어디서 생겼는가? 재결정 에탄올 사용량, 세척량, 여과지 잔류 등을 datasheet 기록과 연결해 논의합니다.
+\item NMR로 본 순도: 잔류 4-bromobenzoic acid, biphenyl, EtOH/\ce{H2O}가 있는가? 적분비로 정량할 수 있는가?
+\item TON/TOF 값의 의미와 한계(4절의 세 가지 가정).
+\item \ce{PhB(OH)2}를 1.2 eq 쓰는 이유: protodeboronation과 호모커플링으로 일부가 소모되기 때문입니다.
+\item 이 계는 얼마나 ``green''한가? 용매, 촉매량(148 ppm), 추출 생략이 장점이고, 산성화로 생기는 폐염과 Pd 폐액이 한계입니다.
+\end{enumerate}
+
+% =====================================================================
+\section*{참고문헌}
+{\footnotesize
+\begin{enumerate}[leftmargin=6mm,itemsep=0.3mm,label={[\arabic*]}]
+\item Hoang, T.\,G. \emph{CM3191 Chemical Synthesis Experiments, Organic Lab Manual}, AY26/27, Exp.\,1, pp.\,2--7; \emph{CM3191 Org L1: Suzuki--Miyaura Cross-Coupling in Water} (lecture slides).
+\item Hamilton, A.\,E.; Buxton, A.\,M.; Peeples, C.\,J.; Chalker, J.\,M. An Operationally Simple Aqueous Suzuki--Miyaura Cross-Coupling Reaction for an Undergraduate Organic Chemistry Laboratory. \emph{J. Chem. Educ.} \textbf{2013}, \emph{90}, 1509--1513. doi:10.1021/ed4002333.
+\item Chalker, J.\,M.; Wood, C.\,S.\,C.; Davis, B.\,G. A Convenient Catalyst for Aqueous and Protein Suzuki--Miyaura Cross-Coupling. \emph{J. Am. Chem. Soc.} \textbf{2009}, \emph{131}, 16346--16347. doi:10.1021/ja907150m.
+\item Carrow, B.\,P.; Hartwig, J.\,F. Distinguishing Between Pathways for Transmetalation in Suzuki--Miyaura Reactions. \emph{J. Am. Chem. Soc.} \textbf{2011}, \emph{133}, 2116--2119. doi:10.1021/ja1108326.
+\item Lennox, A.\,J.\,J.; Lloyd-Jones, G.\,C. Selection of Boron Reagents for Suzuki--Miyaura Coupling. \emph{Chem. Soc. Rev.} \textbf{2014}, \emph{43}, 412--443.
+\item Miyaura, N.; Suzuki, A. Palladium-Catalyzed Cross-Coupling Reactions of Organoboron Compounds. \emph{Chem. Rev.} \textbf{1995}, \emph{95}, 2457--2483.
+\item Ishiyama, T.; Murata, M.; Miyaura, N. Palladium(0)-Catalyzed Cross-Coupling Reaction of Alkoxydiboron with Haloarenes: A Direct Procedure for Arylboronic Esters. \emph{J. Org. Chem.} \textbf{1995}, \emph{60}, 7508--7510.
+\item Roughley, S.\,D.; Jordan, A.\,M. The Medicinal Chemist's Toolbox. \emph{J. Med. Chem.} \textbf{2011}, \emph{54}, 3451--3479.
+\item Fulmer, G.\,R. \emph{et al.} NMR Chemical Shifts of Trace Impurities. \emph{Organometallics} \textbf{2010}, \emph{29}, 2176--2179.
+\item Pavia, D.\,L.; Lampman, G.\,M.; Kriz, G.\,S.; Vyvyan, J.\,R. \emph{Introduction to Spectroscopy}, Cengage (IR 작용기 흡수 범위).
+\item Clark, M.\,P. \emph{et al.} Discovery of a Novel, First-in-Class, Orally Bioavailable Azaindole Inhibitor (VX-787) of Influenza PB2. \emph{J. Med. Chem.} \textbf{2014}, \emph{57}, 6668--6678. \quad 구조 확인: Pimodivir, PubChem CID 67286591.
+\end{enumerate}
+}
+
+\end{document}

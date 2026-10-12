@@ -1,0 +1,202 @@
+\documentclass[11pt,a4paper]{article}
+% CM3191 Organic Experiment 3 -- report draft (pre-written). Compile with XeLaTeX.
+\newif\ifdraft \drafttrue
+\input{report_common}
+
+\begin{document}
+
+\draftnotes{%
+\item 2절과 표 1: 실제 질량, 반응 시간, 온도 관리(물중탕 사용 여부), 추출 부피.
+\item 3절: 빈 둥근 플라스크와 생성물 질량, 수율, TLC 거리와 $R_f$(UV와 anisaldehyde 각각), IR, \textsuperscript{1}H NMR에서 δ 약 4.0과 3.5 신호의 적분.
+\item 4.2절: trans:cis 비 계산(표 4의 식 사용)과 해석.
+\item 주석의 선택지 중 결과에 맞는 문장 선택.}{%
+\item NMR 측정 주파수(400 MHz로 가정), IR 기기명.
+\item 문헌 비교값을 쓸 경우 출처(강의 자료 또는 교재) 확인.}
+
+\reporttitle{Stereoselective Reduction of 4-\textit{tert}-Butylcyclohexanone\\[1mm] with Sodium Borohydride}{Organic Experiment 3}{22 October 2026}
+
+\noindent\textbf{Abstract.} 4-\emph{tert}-Butylcyclohexanone was reduced with sodium borohydride in ethanol to give 4-\emph{tert}-butylcyclohexanol as a mixture of diastereomers in \res{XX}\% yield. The trans:cis ratio, determined by integration of the carbinol (CH--OH) signals in the \textsuperscript{1}H NMR spectrum, was \res{XX:XX}. The preference for the trans isomer is explained by axial delivery of the small hydride nucleophile to a conformationally locked cyclohexanone.
+
+\noindent\rule{\linewidth}{0.6pt}
+
+% =====================================================================
+\section{Introduction}
+
+The reduction of carbonyl compounds is one of the most important ways of preparing alcohols. Sodium borohydride (\ce{NaBH4}) is one of the most common reducing agents in the laboratory. It is mild enough to be used in alcoholic solvents and reduces aldehydes and ketones with good chemoselectivity over other carbonyl groups such as esters.\cite{Manual2026,Clayden2012} Each borohydride ion can, in principle, deliver up to four hydride equivalents.
+
+When the ketone is part of a ring, hydride can approach the carbonyl carbon from two different faces, which gives two diastereomeric alcohols. 4-\emph{tert}-Butylcyclohexanone is a convenient substrate for studying this selectivity. The \emph{tert}-butyl group is so large (conformational A-value of about 5 kcal\,mol$^{-1}$)\cite{Eliel1994} that it stays almost exclusively in the equatorial position, so the ring is ``locked'' in one chair conformation. The two faces of the carbonyl group are therefore well defined (Figure~\ref{fig:scheme}):
+\begin{itemize}[leftmargin=5mm,itemsep=0.5mm]
+\item \textbf{Axial attack} places the new H axial and the OH equatorial, giving \emph{trans}-4-\emph{tert}-butylcyclohexanol.
+\item \textbf{Equatorial attack} places the new H equatorial and the OH axial, giving \emph{cis}-4-\emph{tert}-butylcyclohexanol.
+\end{itemize}
+Hydride reductions of this type are irreversible, so the product ratio reflects the relative rates of the two approaches (kinetic control). Small hydride reagents such as \ce{NaBH4} attack mainly from the axial face and give mostly the trans alcohol, whereas bulky reagents such as L-Selectride (lithium tri-\emph{sec}-butylborohydride) attack from the less hindered equatorial face and give mostly the cis alcohol.\cite{Brown1972,TAMU} Axial attack is hindered only by the small axial hydrogens at C3 and C5, while equatorial attack suffers from torsional interactions with the axial hydrogens at C2 and C6 as the new bond forms; for a small nucleophile the torsional effect dominates.\cite{Clayden2012}
+
+\begin{figure}[H]
+\centering
+\setchemfig{atom sep=1.7em}
+\schemestart
+\chemfig{*6(-(=O)---(-\textit{t}Bu)--)}
+\arrow{->[\footnotesize \ce{NaBH4}, 95\% EtOH][\footnotesize 25--35\,\si{\celsius}]}[,2.0]
+\chemfig{*6(-(-OH)---(-\textit{t}Bu)--)}
+\schemestop
+\caption{Reduction of 4-\emph{tert}-butylcyclohexanone (MW 154.25) to 4-\emph{tert}-butylcyclohexanol (MW 156.27), obtained as trans (OH equatorial) and cis (OH axial) diastereomers.}
+\label{fig:scheme}
+\end{figure}
+
+The ratio of the two diastereomers can be measured by \textsuperscript{1}H NMR spectroscopy from the signal of the hydrogen on the hydroxyl-bearing carbon. Because the ring is locked, this hydrogen is axial in the trans isomer and equatorial in the cis isomer, and equatorial ring hydrogens generally appear about 0.5 ppm downfield of the corresponding axial hydrogens.\cite{TAMU} The two signals are observed near $\delta$ 3.52 (trans) and 4.02 (cis), so their integrals give the diastereomeric ratio directly.\cite{TAMU}
+
+The aims of this experiment were (i) to reduce 4-\emph{tert}-butylcyclohexanone with \ce{NaBH4} while following the reaction by TLC, (ii) to isolate the alcohol by aqueous work-up and extraction, and (iii) to determine the yield and the trans:cis ratio by \textsuperscript{1}H NMR spectroscopy, and to explain the observed stereoselectivity.
+
+% =====================================================================
+\section{Experimental}
+
+\subsection{General}
+4-\emph{tert}-Butylcyclohexanone, sodium borohydride, 95\% ethanol, 3 M hydrochloric acid, ethyl acetate, brine and anhydrous sodium sulfate were used as supplied. TLC was performed with hexane--ethyl acetate (4:1); plates were examined under UV light and then stained with \emph{p}-anisaldehyde solution and heated. IR spectra were recorded on \res{instrument} with an ATR accessory. \textsuperscript{1}H NMR spectra were recorded at \res{400} MHz in \ce{CDCl3}; chemical shifts are reported relative to residual \ce{CHCl3} ($\delta$ 7.26).\cite{Fulmer2010}
+
+\subsection{Reduction}
+4-\emph{tert}-Butylcyclohexanone (\res{0.500} g, \res{3.24} mmol) was dissolved in 95\% ethanol (5 mL) in a 25 mL round-bottom flask with stirring. Sodium borohydride (\res{0.400} g, \res{10.6} mmol, \res{3.3} equiv) was added slowly, keeping the temperature between 25 and 35\,\si{\celsius} with a water bath where necessary. \obs{warming, gas evolution} The reaction was monitored by TLC and was judged complete after \res{XX} min, when the starting ketone was \res{no longer seen}.
+
+\subsection{Work-up}
+Water (3 mL) was added carefully, followed by 3 M hydrochloric acid (1 mL) dropwise; hydrogen was evolved. After about 10 min, when gas evolution had slowed or ceased, the mixture was heated to boiling on a water bath and allowed to cool to room temperature. The white inorganic solid that formed was discarded. The mixture was extracted with ethyl acetate ($2\times10$ mL), and the combined organic layers were washed with water ($2\times10$ mL) and brine (10 mL), dried over anhydrous \ce{Na2SO4}, filtered into a pre-weighed 100 mL round-bottom flask and concentrated on a rotary evaporator to give 4-\emph{tert}-butylcyclohexanol as a \res{white solid} (\res{0.XXX} g, \res{X.XX} mmol, \res{XX}\%, trans:cis \res{XX:XX}).
+
+\noindent\textbf{Characterisation data.} IR (ATR) $\tilde{\nu}_\text{max}$/\si{\per\centi\metre}: \res{values}. \textsuperscript{1}H NMR (\res{400} MHz, \ce{CDCl3}) $\delta$: \res{values}.
+
+% =====================================================================
+\section{Results}
+
+\begin{table}[H]
+\centering
+\caption{Quantities of reagents (planned values from the laboratory manual\cite{Manual2026} and actual values used).}
+\small
+\begin{tabular}{lcccccc}
+\toprule
+Reagent & $M$ / g\,mol$^{-1}$ & Planned & Actual & $n$ / mmol & Equiv. & Hydride equiv. \\
+\midrule
+4-\emph{tert}-Butylcyclohexanone & 154.25 & 0.5 g & \res{} & \res{3.24} & 1.00 & --- \\
+\ce{NaBH4} & 37.83 & 0.4 g & \res{} & \res{10.6} & \res{3.3} & \res{13} \\
+Ethanol (95\%) & 46.07 & 5 mL & \res{} & solvent & --- & --- \\
+\midrule
+4-\emph{tert}-Butylcyclohexanol & 156.27 & theor.\ \res{0.507} g & \res{} & \res{} & --- & --- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Yield.}
+\small
+\begin{tabular}{lc}
+\toprule
+Mass of empty round-bottom flask & \res{} g \\
+Mass of flask + product & \res{} g \\
+Mass of product & \res{0.XXX} g \\
+Theoretical yield (from actual mass of ketone $\times$ 156.27/154.25) & \res{0.XXX} g \\
+Isolated yield & \res{XX}\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{TLC data (silica, hexane--EtOAc 4:1; solvent front \res{X.X} cm).}
+\small
+\begin{tabular}{lcccl}
+\toprule
+Sample & Distance / cm & $R_f$ & UV & Anisaldehyde stain (colour) \\
+\midrule
+Starting ketone & \res{} & \res{} & \res{} & \res{} \\
+Reaction mixture, \res{t} min & \res{} & \res{} & \res{} & \res{} \\
+Reaction mixture, end & \res{} & \res{} & \res{} & \res{} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Diastereomer ratio from the \textsuperscript{1}H NMR carbinol signals. $\%\,\textit{trans} = I_{3.52}/(I_{3.52}+I_{4.02})\times100$.}
+\small
+\begin{tabular}{lccccc}
+\toprule
+Isomer & H on C--OH & Lit.\ $\delta$\cite{TAMU} & Obs.\ $\delta$ (mult.) & Integral & Fraction \\
+\midrule
+\emph{trans} (OH equatorial) & axial & 3.52 & \res{} & \res{} & \res{}\% \\
+\emph{cis} (OH axial) & equatorial & 4.02 & \res{} & \res{} & \res{}\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Principal IR absorptions.}
+\small
+\begin{tabular}{lcc}
+\toprule
+Vibration & Typical range\cite{Pavia} / \si{\per\centi\metre} & Observed / \si{\per\centi\metre} \\
+\midrule
+O--H stretch (alcohol, H-bonded) & 3500--3200 (broad) & \res{} \\
+C--H stretch (sp$^3$) & 3000--2850 & \res{} \\
+C=O stretch (starting ketone; should be absent) & ca.\ 1715 & \res{absent?} \\
+C--O stretch (secondary alcohol) & ca.\ 1100--1050 & \res{} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Observations.}
+\small
+\begin{tabularx}{\linewidth}{lX}
+\toprule
+Stage & Observation \\
+\midrule
+Addition of \ce{NaBH4} & \obs{warming, bubbling, temperature control} \\
+TLC under UV and after staining & \obs{visibility of ketone and alcohol spots} \\
+Quench with water and HCl & \obs{gas evolution, time} \\
+Heating to boiling, cooling & \obs{white solid formed?} \\
+Extraction and drying & \obs{layers, emulsions} \\
+Product after evaporation & \obs{appearance} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+% =====================================================================
+\section{Discussion}
+
+\subsection{Progress of the reaction and work-up}
+TLC showed \res{TLC result}. The \emph{p}-anisaldehyde stain was needed because the ketone absorbs only weakly in the UV (a weak n$\rightarrow\pi^*$ transition) and the alcohol has no UV chromophore; under the UV lamp the spots were \res{faint / invisible}.
+% Adjust to what you saw: e.g. whether the ketone was faintly visible under UV.
+
+A large excess of borohydride was used: 3.3 equiv of \ce{NaBH4} corresponds to about 13 hydride equivalents per ketone. Part of it is consumed by slow reaction with the ethanol solvent and with the water in 95\% ethanol, which releases hydrogen. The excess ensures that reduction is complete within about an hour at 25--35\,\si{\celsius}. The temperature was kept in this range with a water bath rather than an ice bath, so that the reaction proceeded at a reasonable rate while the exotherm and the hydrogen evolution were controlled.
+
+During the work-up, water and then hydrochloric acid destroyed the remaining borohydride with evolution of hydrogen, which is why the acid was added dropwise. After reduction, the alcohol is initially bound to boron as alkoxyborate species. Acid and heating hydrolyse these species and release the free alcohol, leaving boric acid and sodium salts, which account for the white inorganic solid. Extraction into ethyl acetate, washing with water to remove ethanol and inorganic material, and washing with brine to remove most of the dissolved water before drying over \ce{Na2SO4} gave the crude alcohol.
+
+\subsection{Stereoselectivity}
+The \textsuperscript{1}H NMR spectrum showed two carbinol signals, at $\delta$ \res{3.5X} (trans) and \res{4.0X} (cis), whose integrals gave a trans:cis ratio of \res{XX:XX}. The shapes of these signals also agree with the assignment. The axial carbinol H of the trans isomer has two large axial--axial couplings (dihedral angle about 180\si{\degree}) and therefore appears as a broad multiplet (tt), whereas the equatorial carbinol H of the cis isomer has only small couplings (dihedral angles near 60\si{\degree}) and appears as a narrow multiplet, consistent with the Karplus relationship.\cite{Karplus1959} \res{Describe the observed multiplicities.}
+
+The predominance of the trans isomer shows that hydride was delivered mainly from the axial face. \ce{NaBH4} is a small nucleophile, so the steric hindrance to axial attack from the 3,5-diaxial hydrogens is small. Equatorial attack, by contrast, is disfavoured by torsional strain with the neighbouring axial C--H bonds at C2 and C6 as the new C--H bond forms.\cite{Clayden2012} Because hydride reduction is irreversible, the ratio reflects this kinetic preference; the product distribution is not the result of equilibration. The trans isomer happens also to be the more stable one, since its OH group is equatorial. A bulky reagent such as L-Selectride would reverse the selectivity and give mainly the cis alcohol.\cite{Brown1972}
+% If the cis fraction is unusually high: consider whether the NMR integrals overlapped with other signals, or whether the sample contained unreacted ketone.
+
+\subsection{Yield and purity}
+The isolated yield was \res{XX}\%. The absence of the ketone C=O band near 1715 \si{\per\centi\metre} in the IR spectrum and \res{no ketone signals} in the \textsuperscript{1}H NMR spectrum indicate that the reduction was complete.
+% If residual ethyl acetate is present (delta 2.05, 4.12, 1.26 in CDCl3), mention that it inflates the yield.
+\resp{Discuss losses: incomplete extraction, material left in the flask and drying agent, and evaporation. Note any residual solvent peaks.}
+
+% =====================================================================
+\section{Conclusion}
+4-\emph{tert}-Butylcyclohexanone was reduced with sodium borohydride to 4-\emph{tert}-butylcyclohexanol in \res{XX}\% yield. \textsuperscript{1}H NMR integration of the carbinol signals gave a trans:cis ratio of \res{XX:XX}, showing that the small hydride reagent attacks the conformationally locked ketone preferentially from the axial face. The experiment illustrates how a locked cyclohexane ring converts a facial preference into a measurable diastereomer ratio, and how \textsuperscript{1}H NMR chemical shifts and coupling patterns distinguish axial from equatorial hydrogens.
+
+% =====================================================================
+\begin{thebibliography}{99}
+\small
+\setlength{\itemsep}{1pt}
+\bibitem{Manual2026} Hoang, T.\,G. \emph{CM3191 Chemical Synthesis Experiments: Organic Lab Manual}; National University of Singapore, AY2026/27; Experiment 3, pp 14--18.
+\bibitem{Clayden2012} Clayden, J.; Greeves, N.; Warren, S. \emph{Organic Chemistry}, 2nd ed.; Oxford University Press: Oxford, 2012.
+\bibitem{Eliel1994} Eliel, E.\,L.; Wilen, S.\,H. \emph{Stereochemistry of Organic Compounds}; Wiley: New York, 1994.
+\bibitem{Brown1972} Brown, H.\,C.; Krishnamurthy, S. Lithium Tri-\emph{sec}-butylborohydride. A New Reagent for the Reduction of Cyclic and Bicyclic Ketones with Super Stereoselectivity. \emph{J. Am. Chem. Soc.} \textbf{1972}, \emph{94}, 7159--7161.
+\bibitem{TAMU} Reduction of 4-\emph{tert}-butylcyclohexanone. In \emph{Intermediate Organic Chemistry Lab Manual}; Texas A\&M University Libraries (Pressbooks). \url{https://pressbooks.library.tamu.edu/chemistry/chapter/reduction-of-4-tert-butylcyclohexanone/} (accessed \res{date}).
+\bibitem{Fulmer2010} Fulmer, G.\,R.; Miller, A.\,J.\,M.; Sherden, N.\,H.; Gottlieb, H.\,E.; Nudelman, A.; Stoltz, B.\,M.; Bercaw, J.\,E.; Goldberg, K.\,I. NMR Chemical Shifts of Trace Impurities: Common Laboratory Solvents, Organics, and Gases in Deuterated Solvents Relevant to the Organometallic Chemist. \emph{Organometallics} \textbf{2010}, \emph{29}, 2176--2179.
+\bibitem{Pavia} Pavia, D.\,L.; Lampman, G.\,M.; Kriz, G.\,S.; Vyvyan, J.\,R. \emph{Introduction to Spectroscopy}, 5th ed.; Cengage Learning: Stamford, CT, 2015.
+\bibitem{Karplus1959} Karplus, M. Contact Electron-Spin Coupling of Nuclear Magnetic Moments. \emph{J. Chem. Phys.} \textbf{1959}, \emph{30}, 11--15.
+\end{thebibliography}
+
+\end{document}

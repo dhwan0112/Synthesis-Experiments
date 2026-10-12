@@ -1,0 +1,83 @@
+% ---------- common preamble : CM3191 organic documents (XeLaTeX) ----------
+\usepackage[a4paper,top=16mm,bottom=16mm,left=16mm,right=16mm,headheight=14pt]{geometry}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\setmainfont{TeX Gyre Termes}
+\setsansfont{TeX Gyre Heros}
+\setCJKmainfont{Noto Serif CJK KR}
+\setCJKsansfont{Noto Sans CJK KR}
+\xeCJKsetup{CJKspace=true, CJKecglue={}}
+\usepackage{amsmath,amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{chemfig}
+\usepackage{siunitx}
+\sisetup{detect-all, per-mode=symbol, range-phrase=--, range-units=single}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,shapes.geometric,decorations.pathmorphing,patterns}
+\usepackage{tabularx,array,multirow,booktabs}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{pifont}
+\usepackage[hidelinks]{hyperref}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+\linespread{1.08}
+
+\newcommand{\doctag}{}
+\pagestyle{fancy}\fancyhf{}
+\lhead{\footnotesize CM3191 Organic \textemdash\ \doctag}
+\rhead{\footnotesize KIM DONGHWAN \textbullet\ B7 \textbullet\ Thu}
+\cfoot{\footnotesize \thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\titleformat{\section}{\large\bfseries}{\thesection}{0.6em}{}
+\titlespacing*{\section}{0pt}{9pt}{4pt}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{0.5em}{}
+\titlespacing*{\subsection}{0pt}{7pt}{3pt}
+
+% ---------- form primitives ----------
+\newcommand{\wl}[1][4cm]{\rule[-0.6ex]{#1}{0.4pt}}
+\newcommand{\cbox}{$\square$}
+\newcommand{\tr}{\rule[-3mm]{0pt}{9mm}}
+\newcommand{\trs}{\rule[-2mm]{0pt}{7mm}}
+\newcommand{\ruled}[1]{%
+  \par\vspace{3mm}%
+  \foreach \i in {1,...,#1}{\noindent\rule{\linewidth}{0.35pt}\par\vspace{7mm}}%
+  \vspace{-7mm}}
+\newcommand{\confirm}[1]{\textbf{[CONFIRM: #1]}}
+
+% ---------- boxed callout ----------
+\newenvironment{callout}[1]
+  {\par\vspace{2mm}\noindent\begin{tabular}{|@{\hspace{2.5mm}}p{\dimexpr\linewidth-7.4mm\relax}@{\hspace{2.5mm}}|}\hline
+   \rule{0pt}{4.5mm}\textbf{#1}\par\vspace{0.5mm}\small}
+  {\par\vspace{1.5mm}\\\hline\end{tabular}\par\vspace{2mm}}
+
+% ---------- title block ----------
+\newcommand{\manualtitle}[3]{%
+\begin{center}
+{\Large\bfseries #1}\\[1.5mm]
+{\large #2}\\[2mm]
+{\footnotesize #3}
+\end{center}
+\vspace{-1mm}\rule{\linewidth}{1pt}\vspace{1mm}
+}
+
+% ---------- GTA sign-off ----------
+\newcommand{\gtasign}{%
+\par\vspace{3mm}
+\renewcommand{\arraystretch}{1.4}
+\noindent\begin{tabularx}{\linewidth}{|X|X|X|}
+\hline
+\multicolumn{3}{|l|}{\textbf{To be completed at the end of the session}}\\ \hline
+Student signature & GTA name & GTA signature \\ \hline
+\tr & & \\ \hline
+\end{tabularx}
+\renewcommand{\arraystretch}{1}
+\par\vspace{1mm}
+{\footnotesize This is a working log. The \textbf{official} datasheet (lab manual p.\,7) must still be printed, signed by the GTA and submitted with the report.}
+}
+
+% ---------- chemfig defaults ----------
+\setchemfig{atom sep=1.9em, bond style={line width=0.6pt}}

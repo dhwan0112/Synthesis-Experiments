@@ -1,0 +1,207 @@
+\documentclass[11pt,a4paper]{article}
+% CM3191 Organic Experiment 4 -- report draft (pre-written). Compile with XeLaTeX.
+\newif\ifdraft \drafttrue
+\input{report_common}
+
+\begin{document}
+
+\draftnotes{%
+\item 2절과 표 1: 실제 부피, Grignard 적가 시간, 반응 시간, 추출 부피.
+\item 3절: 조생성물과 정제 생성물 질량(두 번의 datasheet 값), 수율, TLC(반응 후 판과 컬럼 분획), IR, \textsuperscript{1}H NMR 실측값.
+\item 표 5의 ``예상 δ''는 구조에서 추정한 대략값입니다. 문헌값으로 바꾸려면 강의 자료나 SDBS에서 확인하세요.
+\item 4절 주석의 선택지 중 결과에 맞는 문장 선택.}{%
+\item 짝(Schlenk line 공유)과 반응을 각자 했는지 함께 했는지. 함께 했다면 2절 첫 문장과 수율 기준을 수정.
+\item NMR 측정 주파수(400 MHz로 가정), IR 기기명, 불활성 기체 종류(질소로 가정).}
+
+\reporttitle{Synthesis of ($\pm$)-Linalool by Addition of Vinylmagnesium Bromide\\[1mm] to 6-Methyl-5-hepten-2-one}{Organic Experiment 4}{15 and 29 October 2026}
+
+\noindent\textbf{Abstract.} Racemic linalool was prepared by the addition of vinylmagnesium bromide to 6-methyl-5-hepten-2-one in anhydrous THF under a nitrogen atmosphere, using Schlenk-line techniques. After quenching with saturated ammonium chloride and extractive work-up, the crude product (\res{0.XXX} g) was purified by flash column chromatography on silica gel to give linalool as a \res{colourless oil} (\res{0.XXX} g, \res{XX}\%). The structure was confirmed by the disappearance of the ketone C=O absorption and methyl ketone signal and by the appearance of the O--H absorption and the characteristic vinyl signals in the IR and \textsuperscript{1}H NMR spectra.
+
+\noindent\rule{\linewidth}{0.6pt}
+
+% =====================================================================
+\section{Introduction}
+
+Grignard reagents, R--MgX, were discovered by Victor Grignard, who received the Nobel Prize in Chemistry in 1912.\cite{Grignard1900,Manual2026} The C--Mg bond is strongly polarised towards carbon, so the carbon atom behaves as a powerful nucleophile and base. Grignard reagents add to the electrophilic carbon of carbonyl groups: with ketones they give tertiary alcohols after protonation of the intermediate magnesium alkoxide.\cite{Clayden2012}
+
+Linalool is a tertiary allylic alcohol and a monoterpene found in the essential oils of more than 200 plant species. (\emph{S})-Linalool is a major constituent of coriander oil and (\emph{R})-linalool of lavender oil.\cite{Manual2026} In this experiment it is prepared by adding a vinyl group to the ketone carbonyl of 6-methyl-5-hepten-2-one (Figure~\ref{fig:scheme}). The carbonyl carbon is prochiral: because both the ketone and the Grignard reagent are achiral, attack on the two faces is equally likely, and the product is racemic ($\pm$)-linalool.
+
+\begin{figure}[H]
+\centering
+\setchemfig{atom sep=1.6em}
+\schemestart
+\chemfig{-[:30](=[:90]O)-[:-30]-[:30]-[:-30]=[:30](-[:90])-[:-30]}
+\arrow{->[\footnotesize 1) \chemfig{=[:30]-[:-30]MgBr} (2.5 equiv)][\footnotesize THF, 0\,\si{\celsius}\,$\rightarrow$\,RT; 2) sat.\ \ce{NH4Cl}]}[,2.6]
+\chemfig{=[:30]-[:-30](-[:-90])(-[:90]OH)-[:30]-[:-30]-[:30]=[:-30](-[:-90])-[:30]}
+\schemestop
+\caption{Synthesis of ($\pm$)-linalool (MW 154.25) from 6-methyl-5-hepten-2-one (MW 126.20) and vinylmagnesium bromide.}
+\label{fig:scheme}
+\end{figure}
+
+Because the Grignard reagent is such a strong base, it is destroyed immediately by water and other protic compounds; vinylmagnesium bromide gives ethylene on protonation.\cite{Manual2026} It also reacts with oxygen. The reaction is therefore carried out in anhydrous THF under nitrogen, in glassware dried by heating under vacuum on a Schlenk line and filled with nitrogen by repeated evacuate--refill cycles, and the reagent is transferred by syringe through a septum.\cite{Borys2023} An excess of the Grignard reagent (2.5 equiv) compensates for reagent lost to traces of moisture and to a competing side reaction: acting as a base, the Grignard reagent can deprotonate the methyl ketone at the $\alpha$-carbon to form an enolate, which simply returns the starting ketone on work-up.\cite{Clayden2012}
+
+The reaction is quenched with saturated aqueous ammonium chloride, a weak acid that protonates the magnesium alkoxide and destroys the excess Grignard reagent. A strong acid is avoided because tertiary allylic alcohols such as linalool are prone to acid-catalysed dehydration and rearrangement.\cite{Clayden2012} The crude product is purified by flash column chromatography.\cite{Still1978} Since neither the starting material nor the product absorbs strongly in the UV, TLC plates are visualised with potassium permanganate, which reacts with the C=C bonds present in both compounds.\cite{Manual2026}
+
+The aims of this experiment were (i) to carry out a Grignard addition under an inert atmosphere using Schlenk-line and syringe techniques, (ii) to purify the product by flash column chromatography guided by TLC, and (iii) to confirm the structure of linalool by IR and \textsuperscript{1}H NMR spectroscopy and to determine the yield.
+
+% =====================================================================
+\section{Experimental}
+
+\subsection{General}
+6-Methyl-5-hepten-2-one, vinylmagnesium bromide (1.0 M in THF, supplied under nitrogen), anhydrous THF, saturated aqueous \ce{NH4Cl}, ethyl acetate, hexane, brine, anhydrous \ce{Na2SO4} and silica gel were used as supplied. Reactions were carried out under \res{nitrogen} on a Schlenk line. TLC was performed with hexane--ethyl acetate (9:1) and visualised with \ce{KMnO4} stain. IR spectra were recorded on \res{instrument} with an ATR accessory. \textsuperscript{1}H NMR spectra were recorded at \res{400} MHz in \ce{CDCl3}; chemical shifts are reported relative to residual \ce{CHCl3} ($\delta$ 7.26).\cite{Fulmer2010}
+
+\subsection{Grignard reaction (session 1)}
+A 50 mL two-necked round-bottom flask containing a stirrer bar was fitted with a rubber septum on the side neck and connected to the Schlenk line through a stopcock adapter on the central neck. The flask was evacuated, heated with a hot-air gun, allowed to cool and refilled with nitrogen; this cycle was performed twice, and the flask was allowed to cool to room temperature. 6-Methyl-5-hepten-2-one (0.44 mL, \res{0.376} g, \res{2.98} mmol) and anhydrous THF (5 mL) were added, and the solution was cooled in an ice--water bath for 5--10 min. Vinylmagnesium bromide (1.0 M in THF, \res{7.5} mL, \res{7.5} mmol, \res{2.5} equiv) was withdrawn with a nitrogen-purged syringe and added dropwise over \res{X} min. \obs{colour, exotherm} The ice bath was removed and the mixture was stirred at room temperature for 90 min.
+
+\subsection{Work-up}
+The flask was disconnected from the Schlenk line, closed with septa and cooled in an ice--water bath, and saturated aqueous \ce{NH4Cl} (10 mL) was added dropwise. \obs{gas, precipitate} Water (10 mL) was added, the mixture was transferred to a separatory funnel with ethyl acetate (20 mL), and the layers were separated. The aqueous layer was extracted with two further portions of ethyl acetate (20 mL each). The combined organic layers (about 60 mL) were washed with brine (15 mL) and dried over anhydrous \ce{Na2SO4} for 15 min. TLC of the dried solution against the starting ketone showed \res{TLC result}. The solution was filtered into a pre-weighed 250 mL round-bottom flask and concentrated on a rotary evaporator to give the crude product as a \res{pale yellow oil} (\res{0.XXX} g).
+
+\subsection{Flash column chromatography (session 2)}
+A column of silica gel (\res{12--15} cm) was packed as a slurry in hexane--ethyl acetate (9:1) between layers of sand. The crude product was loaded in a minimal volume of eluent (with rinses of about 1 mL and 2--3 mL), and the column was eluted with hexane--ethyl acetate (9:1, about 200 mL) under air pressure. Fractions were collected in test tubes and analysed by TLC (\ce{KMnO4} stain). Fractions \res{X--Y} containing the product were combined and concentrated on a rotary evaporator, and the residue was dried under vacuum for 20 min to give ($\pm$)-linalool as a \res{colourless oil} (\res{0.XXX} g, \res{X.XX} mmol, \res{XX}\%).
+
+\noindent\textbf{Characterisation data.} IR (ATR) $\tilde{\nu}_\text{max}$/\si{\per\centi\metre}: \res{values}. \textsuperscript{1}H NMR (\res{400} MHz, \ce{CDCl3}) $\delta$: \res{values}.
+
+% =====================================================================
+\section{Results}
+
+\begin{table}[H]
+\centering
+\caption{Quantities of reagents (planned values from the laboratory manual\cite{Manual2026} and actual values used).}
+\small
+\begin{tabular}{lcccccc}
+\toprule
+Reagent & $M$ / g\,mol$^{-1}$ & Density / conc. & Planned & Actual & $n$ / mmol & Equiv. \\
+\midrule
+6-Methyl-5-hepten-2-one & 126.20 & 0.855 g\,mL$^{-1}$ & 0.44 mL & \res{} & \res{2.98} & 1.00 \\
+Vinylmagnesium bromide & 131.25 & 1.0 M in THF & 7.5 mL & \res{} & \res{7.5} & \res{2.5} \\
+THF (anhydrous) & 72.11 & --- & 5 mL & \res{} & solvent & --- \\
+\midrule
+($\pm$)-Linalool & 154.25 & --- & theor.\ \res{0.460} g & & & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Masses and yields.}
+\small
+\begin{tabular}{lcc}
+\toprule
+ & Crude (session 1) & Purified (session 2) \\
+\midrule
+Mass of empty flask / g & \res{} & \res{} \\
+Mass of flask + product / g & \res{} & \res{} \\
+Mass of product / g & \res{} & \res{} \\
+Yield (theoretical \res{0.460} g) & \res{XX}\% (crude) & \res{XX}\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{TLC data (silica, hexane--EtOAc 9:1, \ce{KMnO4} stain; solvent front \res{X.X} cm).}
+\small
+\begin{tabular}{lccl}
+\toprule
+Sample & Distance / cm & $R_f$ & Comment \\
+\midrule
+6-Methyl-5-hepten-2-one & \res{} & \res{} & \\
+Reaction mixture (dried organic layer) & \res{} & \res{} & \obs{new spot? SM left?} \\
+Column fractions containing product & \res{} & \res{} & \obs{fractions X--Y} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Principal IR absorptions: disappearance of the ketone and appearance of the alcohol.}
+\small
+\begin{tabular}{lccc}
+\toprule
+Vibration & Typical range\cite{Pavia} / \si{\per\centi\metre} & Starting ketone & Product (obs.) \\
+\midrule
+O--H stretch (H-bonded) & 3500--3200 (broad) & absent & \res{} \\
+C=O stretch (aliphatic ketone) & ca.\ 1715 & present & \res{absent?} \\
+C=C stretch & ca.\ 1680--1620 & weak & \res{} \\
+=C--H out-of-plane bend, \ce{-CH=CH2} & ca.\ 990 and 910 & absent & \res{} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{\textsuperscript{1}H NMR data of the product (\ce{CDCl3}). Expected values are approximate positions from the structure; the vinyl pattern is based on closely related linalool derivatives.\cite{Elsharif2015}}
+\small
+\begin{tabularx}{\linewidth}{lcccX}
+\toprule
+Proton(s) & Expected $\delta$ & Mult. & Obs.\ $\delta$ / $\int$ & Comment \\
+\midrule
+\ce{-CH=CH2} (internal H) & ca.\ 5.9 & dd, $J\approx17$, 11 Hz & \res{} & new; not in the ketone \\
+\ce{=CH2} (\emph{trans} to CH) & ca.\ 5.2 & dd, $J\approx17$, 1 Hz & \res{} & new \\
+\ce{=CH2} (\emph{cis} to CH) & ca.\ 5.1 & dd, $J\approx11$, 1 Hz & \res{} & new \\
+\ce{-CH=C(CH3)2} & ca.\ 5.1 & br t & \res{} & also present in the ketone \\
+allylic \ce{CH2} & ca.\ 2.0 & m & \res{} & \\
+\ce{CH2}--C(OH) & ca.\ 1.5 & m & \res{} & \\
+\ce{=C(CH3)2} & ca.\ 1.7, 1.6 & 2 $\times$ s & \res{} & also present in the ketone \\
+\ce{C(OH)CH3} & ca.\ 1.3 & s & \res{} & replaces the \ce{COCH3} singlet near 2.1 \\
+OH & variable & br s & \res{} & exchangeable \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Observations.}
+\small
+\begin{tabularx}{\linewidth}{lX}
+\toprule
+Stage & Observation \\
+\midrule
+Drying the flask on the Schlenk line & \obs{condensation seen and removed?} \\
+Addition of vinylmagnesium bromide & \obs{colour, warming, rate} \\
+Quench with \ce{NH4Cl} & \obs{gas, solids} \\
+Extraction & \obs{layers, emulsions} \\
+Crude product & \obs{appearance, smell} \\
+Column & \obs{band behaviour, number of fractions} \\
+Purified product & \obs{appearance, smell} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+% =====================================================================
+\section{Discussion}
+
+\subsection{Inert-atmosphere technique}
+Drying the flask by heating under vacuum removes the thin film of water adsorbed on the glass surface. Repeating the evacuate--refill cycle reduces the amount of residual air further with each cycle.\cite{Borys2023} Purging the syringe with nitrogen and drawing a small nitrogen cushion into it before withdrawing the needle kept the reagent from contacting air during transfer.\cite{Manual2026} \resp{Comment on anything that may have admitted moisture or air (e.g. a leaking septum, a slow nitrogen flow) and on how the reaction looked.}
+
+\subsection{Evidence for the formation of linalool}
+The key spectroscopic changes are those of the reacting carbonyl group, since the trisubstituted alkene is present in both the starting material and the product. In the IR spectrum, the strong ketone C=O band near 1715 \si{\per\centi\metre} was \res{absent}, and a broad O--H band appeared at \res{X} \si{\per\centi\metre}, as expected for conversion of the ketone into an alcohol.\cite{Pavia} In the \textsuperscript{1}H NMR spectrum, the methyl ketone singlet (near $\delta$ 2.1) was replaced by a methyl singlet at $\delta$ \res{1.3X} on the carbinol carbon. Three new one-proton signals at $\delta$ \res{5.9X}, \res{5.2X} and \res{5.0X} show the typical pattern of a monosubstituted alkene. The internal vinyl proton couples with both terminal protons, with a large \emph{trans} coupling (about 17 Hz) and a smaller \emph{cis} coupling (about 11 Hz), and therefore appears as a doublet of doublets. Each terminal proton appears as a doublet of doublets with one of these couplings and a very small geminal coupling. This is consistent with the vinyl carbinol fragment of linalool derivatives.\cite{Elsharif2015}
+% If ketone signals remain: "A residual singlet at delta 2.1 indicates unreacted ketone (X mol% from integration), consistent with enolisation or loss of Grignard reagent to moisture."
+
+\subsection{Chromatography}
+On silica gel, the alcohol is expected to be more polar than the ketone because it can act as a hydrogen-bond donor, so it should elute later and have a lower $R_f$. The observed $R_f$ values were \res{X.XX} (ketone) and \res{X.XX} (product). \res{Comment on separation.} Because neither compound is UV-active, every fraction had to be checked by \ce{KMnO4} staining, which detects the C=C bonds.
+% If the Rf order was the reverse of expectation, discuss it honestly rather than forcing the prediction.
+
+\subsection{Yield}
+The crude and purified yields were \res{XX}\% and \res{XX}\%, respectively. \resp{Discuss losses: Grignard reagent destroyed by moisture; enolisation of the ketone (starting material recovered); incomplete extraction; mixed fractions discarded on the column; evaporation of the relatively volatile product during rotary evaporation and vacuum drying.}
+Because the product is formed as a racemate, its optical rotation would be zero, in contrast to the enantiomerically enriched natural samples from coriander or lavender.
+
+% =====================================================================
+\section{Conclusion}
+($\pm$)-Linalool was synthesised by the Grignard addition of vinylmagnesium bromide to 6-methyl-5-hepten-2-one under a nitrogen atmosphere and purified by flash chromatography in \res{XX}\% yield. IR and \textsuperscript{1}H NMR spectroscopy confirmed the conversion of the methyl ketone into the tertiary allylic alcohol, in particular through the loss of the C=O band and the methyl ketone singlet and the appearance of the O--H band and the vinyl signals. The experiment demonstrates how Schlenk-line and syringe techniques allow air- and moisture-sensitive organometallic reagents to be used for carbon--carbon bond formation.
+
+% =====================================================================
+\begin{thebibliography}{99}
+\small
+\setlength{\itemsep}{1pt}
+\bibitem{Grignard1900} Grignard, V. Sur quelques nouvelles combinaisons organométalliques du magnésium et leur application à des synthèses d'alcools et d'hydrocarbures. \emph{C. R. Hebd. Séances Acad. Sci.} \textbf{1900}, \emph{130}, 1322.
+\bibitem{Manual2026} Hoang, T.\,G. \emph{CM3191 Chemical Synthesis Experiments: Organic Lab Manual}; National University of Singapore, AY2026/27; Experiment 4, pp 19--27.
+\bibitem{Clayden2012} Clayden, J.; Greeves, N.; Warren, S. \emph{Organic Chemistry}, 2nd ed.; Oxford University Press: Oxford, 2012.
+\bibitem{Borys2023} Borys, A.\,M. An Illustrated Guide to Schlenk Line Techniques. \emph{Organometallics} \textbf{2023}, \emph{42}, 182--196.
+\bibitem{Still1978} Still, W.\,C.; Kahn, M.; Mitra, A. Rapid Chromatographic Technique for Preparative Separations with Moderate Resolution. \emph{J. Org. Chem.} \textbf{1978}, \emph{43}, 2923--2925.
+\bibitem{Fulmer2010} Fulmer, G.\,R.; Miller, A.\,J.\,M.; Sherden, N.\,H.; Gottlieb, H.\,E.; Nudelman, A.; Stoltz, B.\,M.; Bercaw, J.\,E.; Goldberg, K.\,I. NMR Chemical Shifts of Trace Impurities: Common Laboratory Solvents, Organics, and Gases in Deuterated Solvents Relevant to the Organometallic Chemist. \emph{Organometallics} \textbf{2010}, \emph{29}, 2176--2179.
+\bibitem{Pavia} Pavia, D.\,L.; Lampman, G.\,M.; Kriz, G.\,S.; Vyvyan, J.\,R. \emph{Introduction to Spectroscopy}, 5th ed.; Cengage Learning: Stamford, CT, 2015.
+\bibitem{Elsharif2015} Elsharif, S.\,A.; Banerjee, A.; Buettner, A. Structure--Odor Relationships of Linalool, Linalyl Acetate and Their Corresponding Oxygenated Derivatives. \emph{Front. Chem.} \textbf{2015}, \emph{3}, 57.
+\end{thebibliography}
+
+\end{document}

@@ -1,0 +1,454 @@
+{
+  "aug": {
+    "filename": "CM3191-Thurs-400-Aug27-2026-09",
+    "reference": "Stored Bruker ppm axis; no forced shift correction",
+    "mesitylene_window": [
+      2.3825,
+      2.5025
+    ],
+    "product_window": [
+      8.035,
+      8.12
+    ],
+    "product_2H_integral": 0.039838883243830656,
+    "product_mmol": 0.01001947913582341,
+    "apparent_yield_percent": 2.013965655441891,
+    "bands": [
+      {
+        "id": 1,
+        "low": 0,
+        "high": 0.5,
+        "integral": 0.02583636578231823,
+        "assignment": "Unknown / near-zero"
+      },
+      {
+        "id": 2,
+        "low": 0.5,
+        "high": 0.95,
+        "integral": -0.06077367744907802,
+        "assignment": "Baseline"
+      },
+      {
+        "id": 3,
+        "low": 0.95,
+        "high": 1.16,
+        "integral": 0.45636766637603476,
+        "assignment": "Trace aliphatic"
+      },
+      {
+        "id": 4,
+        "low": 1.16,
+        "high": 1.28,
+        "integral": -0.02757550643919934,
+        "assignment": "Trace aliphatic"
+      },
+      {
+        "id": 5,
+        "low": 1.28,
+        "high": 1.42,
+        "integral": 1.3166268753926709,
+        "assignment": "Solvent / unknown"
+      },
+      {
+        "id": 6,
+        "low": 1.42,
+        "high": 1.55,
+        "integral": 0.6101371890051343,
+        "assignment": "Broad unknown"
+      },
+      {
+        "id": 7,
+        "low": 1.55,
+        "high": 1.68,
+        "integral": 2.3845875304717015,
+        "assignment": "1-Phenylethanol CH3"
+      },
+      {
+        "id": 8,
+        "low": 1.68,
+        "high": 1.84,
+        "integral": 0.001336706891894957,
+        "assignment": "Trace / satellites"
+      },
+      {
+        "id": 9,
+        "low": 1.84,
+        "high": 2.1,
+        "integral": 0.029455512075303784,
+        "assignment": "Trace / baseline"
+      },
+      {
+        "id": 10,
+        "low": 2.1,
+        "high": 2.21,
+        "integral": -0.01871989014868214,
+        "assignment": "Trace / baseline"
+      },
+      {
+        "id": 11,
+        "low": 2.21,
+        "high": 2.32,
+        "integral": 0.5825181490428524,
+        "assignment": "Residual acetone (tentative)"
+      },
+      {
+        "id": 12,
+        "low": 2.32,
+        "high": 2.35,
+        "integral": 0.03342360965861007,
+        "assignment": "Trace / baseline"
+      },
+      {
+        "id": 13,
+        "low": 2.35,
+        "high": 2.51,
+        "integral": 8.992538380133103,
+        "assignment": "Mesitylene CH3"
+      },
+      {
+        "id": 14,
+        "low": 2.51,
+        "high": 2.63,
+        "integral": 0.01713484266312689,
+        "assignment": "Trace / satellites"
+      },
+      {
+        "id": 15,
+        "low": 2.63,
+        "high": 2.73,
+        "integral": 0.5036657851978042,
+        "assignment": "AP CH3 + overlap"
+      },
+      {
+        "id": 16,
+        "low": 2.73,
+        "high": 3.05,
+        "integral": 0.7289265328992374,
+        "assignment": "OH / unknown"
+      },
+      {
+        "id": 17,
+        "low": 3.05,
+        "high": 3.48,
+        "integral": -0.023841165536334998,
+        "assignment": "Unknown"
+      },
+      {
+        "id": 18,
+        "low": 3.48,
+        "high": 3.8,
+        "integral": -0.0014944126944455777,
+        "assignment": "Baseline"
+      },
+      {
+        "id": 19,
+        "low": 3.8,
+        "high": 4.3,
+        "integral": 0.215891319288623,
+        "assignment": "Broad unknown"
+      },
+      {
+        "id": 20,
+        "low": 4.3,
+        "high": 4.65,
+        "integral": -0.014307492867955853,
+        "assignment": "Baseline"
+      },
+      {
+        "id": 21,
+        "low": 4.65,
+        "high": 5.15,
+        "integral": 0.7280060258881499,
+        "assignment": "1-Phenylethanol CH"
+      },
+      {
+        "id": 22,
+        "low": 5.15,
+        "high": 6.7,
+        "integral": -0.1240959379082579,
+        "assignment": "Baseline"
+      },
+      {
+        "id": 23,
+        "low": 6.7,
+        "high": 7.05,
+        "integral": 2.8027020683017465,
+        "assignment": "Mesitylene ArH"
+      },
+      {
+        "id": 24,
+        "low": 7.05,
+        "high": 7.32,
+        "integral": 0.06018777887875732,
+        "assignment": "Trace / solvent"
+      },
+      {
+        "id": 25,
+        "low": 7.32,
+        "high": 7.6,
+        "integral": 3.4908050528071275,
+        "assignment": "Overlapping aromatic / solvent"
+      },
+      {
+        "id": 26,
+        "low": 7.6,
+        "high": 7.85,
+        "integral": 0.00039764131314102885,
+        "assignment": "Aromatic; PPh3/OPPh3 possible"
+      },
+      {
+        "id": 27,
+        "low": 7.85,
+        "high": 8.0,
+        "integral": 0.0003301403186129939,
+        "assignment": "Aromatic tail"
+      },
+      {
+        "id": 28,
+        "low": 8.0,
+        "high": 8.16,
+        "integral": 0.03991816331112911,
+        "assignment": "Acetophenone ortho-H"
+      },
+      {
+        "id": 29,
+        "low": 8.16,
+        "high": 10,
+        "integral": 0.009490438875442176,
+        "assignment": "Baseline"
+      }
+    ],
+    "actual_reagent_masses_g": {
+      "K2CO3": 0.074,
+      "RuCl2(PPh3)3": 0,
+      "source": "User clarification 2026-09-09; no catalyst in control"
+    },
+    "reaction_time_min_assumed": 60
+  },
+  "sep": {
+    "filename": "CM3191(Thurs)-400-Sep03-2026-09",
+    "reference": "Stored Bruker ppm axis; no forced shift correction",
+    "mesitylene_window": [
+      2.367,
+      2.487
+    ],
+    "product_window": [
+      8.035,
+      8.12
+    ],
+    "product_2H_integral": 0.1882862796079915,
+    "product_mmol": 0.04735399932140986,
+    "apparent_yield_percent": 9.518391823398966,
+    "bands": [
+      {
+        "id": 1,
+        "low": 0,
+        "high": 0.5,
+        "integral": 0.04293473823449828,
+        "assignment": "Unknown / near-zero"
+      },
+      {
+        "id": 2,
+        "low": 0.5,
+        "high": 0.95,
+        "integral": -0.01042629796351826,
+        "assignment": "Baseline"
+      },
+      {
+        "id": 3,
+        "low": 0.95,
+        "high": 1.16,
+        "integral": 0.07288549578697867,
+        "assignment": "Trace aliphatic"
+      },
+      {
+        "id": 4,
+        "low": 1.16,
+        "high": 1.28,
+        "integral": -0.0014835834690917447,
+        "assignment": "Trace aliphatic"
+      },
+      {
+        "id": 5,
+        "low": 1.28,
+        "high": 1.42,
+        "integral": 1.3475729009424269,
+        "assignment": "Solvent / unknown"
+      },
+      {
+        "id": 6,
+        "low": 1.42,
+        "high": 1.55,
+        "integral": 0.12416913265748045,
+        "assignment": "Broad unknown"
+      },
+      {
+        "id": 7,
+        "low": 1.55,
+        "high": 1.68,
+        "integral": 2.172772737178886,
+        "assignment": "1-Phenylethanol CH3"
+      },
+      {
+        "id": 8,
+        "low": 1.68,
+        "high": 1.84,
+        "integral": 0.014409238255710726,
+        "assignment": "Trace / satellites"
+      },
+      {
+        "id": 9,
+        "low": 1.84,
+        "high": 2.1,
+        "integral": 0.022509674155750874,
+        "assignment": "Trace / baseline"
+      },
+      {
+        "id": 10,
+        "low": 2.1,
+        "high": 2.21,
+        "integral": -0.011857242619489786,
+        "assignment": "Trace / baseline"
+      },
+      {
+        "id": 11,
+        "low": 2.21,
+        "high": 2.32,
+        "integral": 0.7017065781142111,
+        "assignment": "Residual acetone (tentative)"
+      },
+      {
+        "id": 12,
+        "low": 2.32,
+        "high": 2.35,
+        "integral": -0.005745564402514406,
+        "assignment": "Trace / baseline"
+      },
+      {
+        "id": 13,
+        "low": 2.35,
+        "high": 2.51,
+        "integral": 9.100280268322402,
+        "assignment": "Mesitylene CH3"
+      },
+      {
+        "id": 14,
+        "low": 2.51,
+        "high": 2.63,
+        "integral": 0.052176488168687064,
+        "assignment": "Trace / satellites"
+      },
+      {
+        "id": 15,
+        "low": 2.63,
+        "high": 2.73,
+        "integral": 0.7216600151112482,
+        "assignment": "AP CH3 + overlap"
+      },
+      {
+        "id": 16,
+        "low": 2.73,
+        "high": 3.05,
+        "integral": -0.03015412492439596,
+        "assignment": "OH / unknown"
+      },
+      {
+        "id": 17,
+        "low": 3.05,
+        "high": 3.48,
+        "integral": 0.6785299473200286,
+        "assignment": "Unknown"
+      },
+      {
+        "id": 18,
+        "low": 3.48,
+        "high": 3.8,
+        "integral": -0.00610914449806227,
+        "assignment": "Baseline"
+      },
+      {
+        "id": 19,
+        "low": 3.8,
+        "high": 4.3,
+        "integral": 0.23292741749479562,
+        "assignment": "Broad unknown"
+      },
+      {
+        "id": 20,
+        "low": 4.3,
+        "high": 4.65,
+        "integral": 0.0008676127824745762,
+        "assignment": "Baseline"
+      },
+      {
+        "id": 21,
+        "low": 4.65,
+        "high": 5.15,
+        "integral": 0.7138191479481442,
+        "assignment": "1-Phenylethanol CH"
+      },
+      {
+        "id": 22,
+        "low": 5.15,
+        "high": 6.7,
+        "integral": -0.16778936295256802,
+        "assignment": "Baseline"
+      },
+      {
+        "id": 23,
+        "low": 6.7,
+        "high": 7.05,
+        "integral": 2.661630157157913,
+        "assignment": "Mesitylene ArH"
+      },
+      {
+        "id": 24,
+        "low": 7.05,
+        "high": 7.32,
+        "integral": -0.03646921155082864,
+        "assignment": "Trace / solvent"
+      },
+      {
+        "id": 25,
+        "low": 7.32,
+        "high": 7.6,
+        "integral": 4.306398465686237,
+        "assignment": "Overlapping aromatic / solvent"
+      },
+      {
+        "id": 26,
+        "low": 7.6,
+        "high": 7.85,
+        "integral": 1.2592691149755848,
+        "assignment": "Aromatic; PPh3/OPPh3 possible"
+      },
+      {
+        "id": 27,
+        "low": 7.85,
+        "high": 8.0,
+        "integral": 0.004312841107962562,
+        "assignment": "Aromatic tail"
+      },
+      {
+        "id": 28,
+        "low": 8.0,
+        "high": 8.16,
+        "integral": 0.19056425186351886,
+        "assignment": "Acetophenone ortho-H"
+      },
+      {
+        "id": 29,
+        "low": 8.16,
+        "high": 10,
+        "integral": -0.029401014799394685,
+        "assignment": "Baseline"
+      }
+    ],
+    "actual_reagent_masses_g": {
+      "K2CO3": 0.0707,
+      "RuCl2(PPh3)3": 0.06,
+      "source": "User clarification 2026-09-09; no catalyst in control"
+    },
+    "reaction_time_min_assumed": 60
+  }
+}

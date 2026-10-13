@@ -184,3 +184,10 @@ Pd(OAc)₂ **5.6 mg (0.025 mmol)**과 2-amino-4,6-dihydroxypyrimidine **6.3 mg (
 
 ## 11. 안전과 폐기물 요약
 `../safety.md`의 "유기 실험 1" 절. 핵심: DMSO-*d*₆는 피부로 흡수되어 다른 물질을 운반, NaOH 부식성(caustic), HCl 부식성, ethanol 인화성, HCl 투입 시 기체 발생, Pd는 금속 폐액(매뉴얼의 폐기물 항목에는 없지만 Pd 폐액은 따로 처리해야 함 [Concepts]).
+
+## 12. L1 슬라이드의 추가 내용 (올해 강의 자료)
+
+- **다른 커플링 반응** [L1 p21-23, 부록 슬라이드]: **Heck 반응**(Richard F. Heck, 1931-2015, Delaware 대학), **Negishi 반응**(Ei-ichi Negishi, 1935-2021, Purdue 대학), **Hiyama 반응**(1988-1994, **유기규소** 화합물), **Buchwald-Hartwig 커플링**(1995, **C-N과 C-O 결합 형성**). 슬라이드에서 이름과 간단한 맥락만 소개하므로 반응식은 따로 외울 필요가 없고, "어떤 반응이 어떤 결합과 시약과 관련되는지"를 연결해 두세요.
+- **교차 커플링의 원리** [L1 p4]: 두 분자가 금속 위에서 **금속-탄소 결합**을 만들며 모이고, 서로 결합해 **새 C-C 단일결합**이 생긴다.
+- **약학 응용 예** [L1 p3, M p2]: rofecoxib(Vioxx, 관절염 증상 완화), losartan(고혈압), abemaciclib(세포 주기 억제 항암제), rucaparib(PARP 억제제, 난소암), lapatinib(HER2 양성 유방암).
+- **연습 문제 슬라이드** [L1 p20]: 인플루엔자 항바이러스제 **pimodivir**의 합성에서 유기붕소 화합물 **11**과 염화물 **14**의 구조를 제시하라. 풀이는 `organic/1/CM3191 Organic Expt 1 Suzuki Concepts.pdf`에 있습니다.

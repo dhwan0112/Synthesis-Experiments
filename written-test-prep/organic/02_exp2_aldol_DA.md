@@ -174,3 +174,10 @@ benzil, 1,3-diphenylacetone의 실제 질량, styrene의 양(mL), 빈 봉지 질
 
 ## 8. 안전 요약
 `../safety.md`의 "유기 실험 2" 절. 핵심: styrene(Group 2B, 인화성), 오일 배스 취급, 170 °C 이상 가열 금지. [M-유기 p10]
+
+## 9. L2 슬라이드의 추가 내용 (올해 강의 자료)
+
+- **학습 목표** [L2 p14]: (1) **합성**: one-pot aldol 축합과 Diels-Alder 반응을 수행한다. (2) **결정**: 분광법으로 Diels-Alder 반응의 **주된 위치 및 입체화학적 결과**를 결정한다.
+- **작업 흐름 요약** [L2 p15]: 1단계 용해(benzil 0.21 g, 1,3-diphenylacetone 0.21 g, TEG 0.5 mL를 110 °C로 가열해 균일한 노란 용융물) → 2단계 aldol(ethanolic KOH를 가하면 즉시 짙은 보라색 tetracyclone, 3-5분 가열 후 R1 TLC로 완결 확인) → 3단계 [4+2](styrene 0.40 mL, 110 °C 30분, 보라색이 tan으로 변함, R2 TLC로 diene 소멸 확인) → 4단계 분리(실온으로 식혀 ethanol로 quench, 얼음에서 침전, Hirsch 깔때기 여과, 재결정).
+- **Diels-Alder 예** [L2 p3, p5]: **Captan**은 비전신성 phthalimide 살균제로 농업에서 과수, 채소, 관상 식물의 곰팡이병(검은별무늬병, 과일 썩음병 등)을 방제하는 데 쓰인다. **Tamiflu(oseltamivir)**는 인플루엔자 A와 B의 예방과 치료제이며, Corey 등이 **1,3-butadiene과 acrylic acid**로부터 짧은 거울상 선택적 경로로 합성했다(J. Am. Chem. Soc. 2006, 128, 6310).
+- **dienophile 조건** [L2 p3]: 보통 **전자 끌개기(EWG)**가 필요하고, 적어도 **페닐(Ph)이나 염소(Cl)** 치환기가 있어야 한다. styrene은 페닐만 있는 약한 dienophile이다.

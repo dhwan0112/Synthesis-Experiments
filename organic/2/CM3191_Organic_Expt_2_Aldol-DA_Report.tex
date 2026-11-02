@@ -1,0 +1,266 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[a4paper,margin=22mm]{geometry}
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Termes}
+\usepackage{amsmath,amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{chemfig}
+\usepackage{siunitx}
+\sisetup{detect-all, per-mode=symbol}
+\usepackage{booktabs,tabularx,array}
+\usepackage[super]{cite}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\captionsetup{font=small,labelfont=bf,labelsep=period}
+\titleformat{\section}{\large\bfseries}{\thesection.}{0.5em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{0.5em}{}
+\titlespacing*{\subsection}{0pt}{1.2ex}{0.4ex}
+\setlength{\parskip}{3pt}
+\setlength{\emergencystretch}{3em}
+\linespread{1.1}
+\setchemfig{atom sep=1.3em, bond style={line width=0.6pt}}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries Synthesis of \emph{endo}-1,2,3,4,5-Pentaphenylbicyclo[2.2.1]hept-2-en-7-one\\[1mm] by One-Pot Aldol Condensation and Diels--Alder Reaction}\\[4mm]
+CM3191 \textbullet\ 8 and 15 October 2026 \textbullet\ Instructor: Dr Hoang Truong Giang\\
+Kim Donghwan \textbullet\ Thursday group (B7/SN9) \textbullet\ e1075536@u.nus.edu
+\end{center}
+\vspace{1mm}
+\noindent\rule{\linewidth}{0.6pt}
+
+\section{Aim}
+Tetracyclone \textbf{1} was prepared by KOH-catalysed double aldol condensation of benzil with 1,3-diphenylacetone in triethylene glycol (TEG).\cite{Manual2026,L2} It was trapped in the same vial by a Diels--Alder reaction with styrene at 110\,\si{\celsius} (Figure~\ref{fig:scheme}). Each step was followed by TLC. The product was recrystallised from ethanol/ethyl acetate. Its identity among \textbf{3A}, \textbf{3B} and \textbf{4} was assessed by melting point, IR and \textsuperscript{1}H NMR spectroscopy and the X-ray crystal structure.\cite{Hoang2015}
+
+\begin{figure}[H]
+\centering
+\schemestart
+\chemfig{Ph-[:30](=[:90]O)-[:-30](=[:-90]O)-[:30]Ph}
+\+
+\chemfig{Ph-[:-30]-[:30](=[:90]O)-[:-30]-[:30]Ph}
+\arrow{->[\footnotesize KOH, EtOH][\footnotesize TEG, 110\,\si{\celsius}]}[,1.7]
+\chemfig{*5((=O)-(-Ph)=(-Ph)-(-Ph)=(-Ph)-)}
+\arrow{->[\footnotesize styrene][\footnotesize 110\,\si{\celsius}, 30 min]}[,1.5]
+{\small \textbf{3A}, \textbf{3B} or \textbf{4}}
+\schemestop
+\caption{One-pot sequence. \textbf{3A} (\emph{endo}) and \textbf{3B} (\emph{exo}) are 1,2,3,4,5-pentaphenylbicyclo[2.2.1]hept-2-en-7-one (MW 488.63). \textbf{4} is 1,2,3,4,5-pentaphenylcyclohexa-1,3-diene (MW 460.62), formed if CO is lost.\cite{Manual2026}}
+\label{fig:scheme}
+\end{figure}
+
+\section{Results}
+
+\begin{table}[H]
+\centering
+\caption{Reagents.}
+\label{tab:reagents}
+\small
+\begin{tabular}{lcccc}
+\toprule
+Reagent & $M$ / g\,mol$^{-1}$ & Amount & $n$ / mmol & Equiv. \\
+\midrule
+Benzil (limiting) & 210.23 & 0.2080 g & 0.989 & 1.00 \\
+1,3-Diphenylacetone & 210.27 & 0.21 g (fixed portion) & 1.00 & 1.01 \\
+Triethylene glycol & 150.17 & 0.50 mL & --- & solvent \\
+KOH, 2 M in EtOH & 56.11 & 5 drops & --- & cat. \\
+Styrene ($\rho$ 0.906 g\,mL$^{-1}$) & 104.15 & 0.40 mL & 3.48 & 3.52 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Mass and yield, corrected for residual solvent by \textsuperscript{1}H NMR (calculation in Appendix B).\cite{Handout}}
+\label{tab:yield}
+\small
+\begin{tabular}{lc}
+\toprule
+ & \textbf{3A} (MW 488.63) \\
+\midrule
+Product (bag + product $-$ bag) & 1.5135 g $-$ 1.3105 g $=$ 0.2030 g \\
+Product content & 99.6 wt\% \\
+Corrected mass & 0.2023 g \\
+Theoretical yield (0.989 mmol) & 0.4834 g \\
+Yield, uncorrected / corrected & 42.0\% / \textbf{41.8\%} \\
+\bottomrule
+\end{tabular}
+
+\smallskip
+\begin{minipage}{0.9\linewidth}\footnotesize
+The datasheet yield (41.6\%) used a nominal 1.00 mmol of benzil.
+\end{minipage}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{TLC (silica, 10\% EtOAc/hexane, UV). Spots are given as lower and upper edge; $R_f$ uses the spot centre.}
+\label{tab:tlc}
+\small
+\begin{tabular}{llccl}
+\toprule
+Plate (front) & Lane & Spot / cm & $R_f$ & Comment \\
+\midrule
+1 (4.5 cm) & Benzil (B) & 1.3--1.5 & 0.31 & B and D not resolved \\
+ & 1,3-Diphenylacetone (D) & 1.3--1.5 & 0.31 & \\
+ & R1 & 1.8--2.0 & 0.42 & single spot \\
+2 (4.5 cm) & R1 & 2.0--2.3 & 0.48 & main spot, streak at 1.5--1.7 cm \\
+ & R2 & 1.8--2.0 & 0.42 & new lower spot, streak at 1.5--1.7 cm \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Observations.}
+\label{tab:obs}
+\small
+\begin{tabularx}{\linewidth}{lX}
+\toprule
+Stage & Observation \\
+\midrule
+KOH (5 drops) & Turned deep purple, almost black, almost immediately. \\
+Styrene, 110\,\si{\celsius}, 30 min & R2 sample bright yellowish brown (caf\'e latte to milk tea). TLC at 11:42--11:59 showed completion. No extra styrene added. \\
+Recrystallisation & 10 mL EtOH and 10 mL EtOAc, each from a fixed-volume dispenser. The mixture looked white to pale pink while heating. Extra hot EtOAc was added by dropper until the solid dissolved; its volume was not measured. The solution was then clear and bright pink. It was left at room temperature for one week, covered with foil pierced with a few holes. Crystals were filtered in the next session (15 October). \\
+Product & White, slightly translucent crystals; white when ground for the melting point. \\
+Melting point (Mel-Temp) & 176.4--187.8\,\si{\celsius}. Browned as melting began; black liquid when fully molten. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{\textsuperscript{1}H NMR (500 MHz, \ce{CDCl3}, $\delta$ relative to \ce{CHCl3} at 7.26)\cite{Fulmer2010} and IR data. H$_a$ is the benzylic CH and H$_b$/H$_c$ the \ce{CH2}.}
+\label{tab:nmr}
+\small
+\begin{tabular}{lllcl}
+\toprule
+$\delta$ / ppm & Mult. & $J$ / Hz & Int. & Assignment \\
+\midrule
+7.62--6.42 & m & --- & 26.2$^{a}$ & 25 aromatic H \\
+4.30 & dd & 10.0, 6.5 & 1.00 & H$_a$ \\
+3.18 & dd & 12.3, 10.0 & 0.99 & H$_b$, \emph{cis} to H$_a$ \\
+2.65 & dd & 12.3, 6.5 & 0.99 & H$_c$, \emph{trans} to H$_a$ \\
+2.05 & s & --- & 0.04 & EtOAc \\
+\midrule
+\multicolumn{5}{l}{IR (solid, $\tilde{\nu}$/cm$^{-1}$) 3048, 3028 (Ar C--H), \textbf{1773} (C=O), 1601, 1494, 1439 (Ar C=C), 751, 693 (Ph)} \\
+\multicolumn{5}{l}{X-ray structure (C$_{37}$H$_{28}$O) \emph{endo} adduct \textbf{3A}} \\
+\bottomrule
+\end{tabular}
+
+\smallskip
+\begin{minipage}{0.9\linewidth}\footnotesize
+$^{a}$ Includes residual \ce{CHCl3}. Groups 7.62--7.58 (2H), 7.47--7.42 (2H), 7.38--7.05 (14H), 6.95--6.88 (3H), 6.81--6.76 (2H), 6.46--6.42 (2H).
+\end{minipage}
+\end{table}
+
+\section{Discussion}
+
+\subsection{Reaction monitoring}
+The mixture turned deep purple, almost black, almost immediately after KOH was added. This colour indicates the conjugated tetracyclone \textbf{1}. On plate 1, R1 gave one spot at $R_f$ 0.42. No spot remained at $R_f$ 0.31. Both starting materials were therefore consumed in the aldol step. Benzil and 1,3-diphenylacetone co-eluted, however. Had one remained, the plate could not have shown which.
+
+On plate 2, R2 ran slightly below R1. The colour changed from deep purple, almost black, to yellowish brown. Both changes indicate that \textbf{1} was consumed. R1 ran at $R_f$ 0.42 on plate 1 but 0.48 on plate 2. Lanes were therefore compared within one plate. The streak at 1.5--1.7 cm may come from overloading with TEG-containing samples.
+
+\subsection{Product identity}
+The spectrum shows 25 aromatic H and three 1H doublets of doublets. This ratio fits a 1:1 adduct of \textbf{1} and styrene. No styrene vinyl signals appear at $\delta$ 5.2--5.8.
+
+H$_b$ and H$_c$ share a geminal coupling of 12.3 Hz. H$_a$ couples to them with 10.0 and 6.5 Hz. Together they form a CHPh--\ce{CH2} unit. In a rigid bicyclo[2.2.1] skeleton, \emph{cis} vicinal protons are nearly eclipsed. \emph{Trans} vicinal protons lie near 120\si{\degree}. The Karplus relationship predicts the larger coupling for the \emph{cis} pair.\cite{Karplus1959} H$_b$ is therefore \emph{cis} to H$_a$, and H$_c$ is \emph{trans}. The 2H multiplet at $\delta$ 6.44 is strongly shielded. A phenyl ring may lie over the face of a neighbouring ring in this crowded framework.
+
+Compound \textbf{4} also contains a CHPh--\ce{CH2} unit. The NMR data therefore cannot separate \textbf{3A}/\textbf{3B} from \textbf{4}. IR settles this point. The IR spectrum shows a strong C=O band at 1773 cm$^{-1}$. This lies about 60 cm$^{-1}$ above an unstrained ketone near 1715 cm$^{-1}$. Ring strain raises the C=O frequency.\cite{Pavia} The band fits the strained bridging ketone of \textbf{3A}/\textbf{3B}. Compound \textbf{4} has no carbonyl group and is ruled out.
+
+Both \textbf{3A} and \textbf{3B} have one \emph{cis} and one \emph{trans} \ce{CH2} proton relative to H$_a$. The $J$ values therefore cannot distinguish \emph{endo} from \emph{exo}.
+
+The X-ray structure (C$_{37}$H$_{28}$O) shows the \emph{endo} adduct \textbf{3A}.\cite{XRD,Hoang2015} The styrene phenyl lies \emph{anti} to the carbonyl bridge. It sits on the same side as the C3=C4 bridge. The torsion angles confirm the NMR assignment. H6A--C6--C7--H7A is $-12.6$\si{\degree}, close to eclipsed. H6A--C6--C7--H7B is 133.3\si{\degree}. H6A is therefore H$_a$, H7A is H$_b$ and H7B is H$_c$ (handout numbering). The C2--C1--C5 angle at the carbonyl carbon is only 99.0\si{\degree}. This compression fits the high C=O frequency. The \emph{endo} adduct could have formed under kinetic control, favoured by secondary orbital overlap.\cite{L2}
+
+\subsection{Melting behaviour}
+The sample melted at 176.4--187.8\,\si{\celsius}. It browned as melting began and ended as a black liquid. The product can release styrene above 170\,\si{\celsius}.\cite{Manual2026} This retro-Diels--Alder reaction would regenerate the coloured tetracyclone. Loss of CO could also contribute. The broad range probably reflects decomposition. NMR shows 99.6 wt\% product, with only traces of EtOAc and EtOH. The hot recrystallisation solution was clear and bright pink. This colour suggests a trace of intensely coloured \textbf{1}. The crystals were white, so this impurity probably stayed in the mother liquor.
+
+\subsection{Yield loss}
+The corrected yield of \textbf{3A} was 41.8\%. TLC of R2 showed complete conversion. Most of the loss probably occurred during work-up. The solution stood for one week before filtration. Crystallisation time therefore probably did not limit recovery. It was filtered at room temperature without ice cooling. The product remains partly soluble in EtOH/EtOAc at room temperature. Some therefore stayed in the mother liquor. Extra hot EtOAc was added by dropper and may have increased this loss, but its volume was not measured. More was lost in transfers and in the ethanol washes. The crude solid was not weighed. Reaction and purification losses cannot be separated.
+
+\subsection{Improvements}
+Weighing the crude solid would separate reaction and purification losses. Adding the extra EtOAc from a graduated pipette, and keeping it to a minimum, might raise recovery. So might cooling the flask in ice before filtration. A second crop from the concentrated mother liquor could add product, with its purity checked by TLC.\cite{Vogel} These changes would need testing. A less polar eluent or a co-spot could resolve the two starting materials. A sealed capillary might limit decomposition during the melting point.
+
+\subsection{Green aspects}
+The aldol step loses only two molecules of water.\cite{Trost1991} Its atom economy is
+\[
+\text{AE}(\textbf{1}) = \frac{384.48}{210.23 + 210.27} \times 100\% = 91.4\%
+\]
+The Diels--Alder step incorporates all atoms of both partners. Over both steps,
+\[
+\text{AE}(\textbf{3}) = \frac{488.63}{210.23 + 210.27 + 104.15} \times 100\% = 93.1\%
+\]
+The one-pot design avoided isolating and redissolving tetracyclone.
+
+\section{Conclusion}
+Tetracyclone was formed by double aldol condensation and trapped in situ with styrene. TLC showed complete conversion in both steps. The recrystallised product, white crystals, weighed 0.2030 g (41.8\% after NMR correction). It decomposed on melting at 176--188\,\si{\celsius}. \textsuperscript{1}H NMR showed a 1:1 adduct with a rigid CH--\ce{CH2} unit. The IR C=O band at 1773 cm$^{-1}$ identified the bridged ketone \textbf{3A}/\textbf{3B}. The X-ray structure identified the product as the \emph{endo} adduct \textbf{3A}.
+
+\begin{thebibliography}{99}
+\small
+\setlength{\itemsep}{0pt}
+\bibitem{Manual2026} Hoang, T.\,G. \emph{CM3191 Chemical Synthesis Experiments: Organic Lab Manual}; National University of Singapore, AY2026/27; Experiment 2, pp 8--13.
+\bibitem{L2} Hoang, T.\,G. \emph{CM3191 Org L2: One-Pot Aldol Condensation and Diels--Alder Reaction} (lecture slides); National University of Singapore, 2026.
+\bibitem{Hoang2015} Hoang, G.\,T.; Kubo, T.; Young, V.\,G.; Kautzky, J.\,A.; Wissinger, J.\,E. Illustrating the Utility of X-ray Crystallography for Structure Elucidation through a Tandem Aldol Condensation/Diels--Alder Reaction Sequence. \emph{J. Chem. Educ.} \textbf{2015}, \emph{92}, 1381--1384.
+\bibitem{XRD} Rohde, G.\,T.; Young, V.\,G., Jr. \emph{X-ray Crystal Structure Data for the Major Product Isolated from the Diels--Alder Reaction of Tetraphenylcyclopentadienone and Styrene} (CM3191 handout, Hoang, T.\,G.); University of Minnesota; National University of Singapore, 2026.
+\bibitem{Handout} \emph{Correcting Compound Mass and Yield for Residual Solvent Using \textsuperscript{1}H NMR} (CM3191 handout); National University of Singapore, 2026.
+\bibitem{Fulmer2010} Fulmer, G.\,R.; Miller, A.\,J.\,M.; Sherden, N.\,H.; Gottlieb, H.\,E.; Nudelman, A.; Stoltz, B.\,M.; Bercaw, J.\,E.; Goldberg, K.\,I. NMR Chemical Shifts of Trace Impurities: Common Laboratory Solvents, Organics, and Gases in Deuterated Solvents Relevant to the Organometallic Chemist. \emph{Organometallics} \textbf{2010}, \emph{29}, 2176--2179.
+\bibitem{Karplus1959} Karplus, M. Contact Electron-Spin Coupling of Nuclear Magnetic Moments. \emph{J. Chem. Phys.} \textbf{1959}, \emph{30}, 11--15.
+\bibitem{Pavia} Pavia, D.\,L.; Lampman, G.\,M.; Kriz, G.\,S.; Vyvyan, J.\,R. \emph{Introduction to Spectroscopy}, 5th ed.; Cengage Learning: Stamford, CT, 2015.
+\bibitem{Vogel} Furniss, B.\,S.; Hannaford, A.\,J.; Smith, P.\,W.\,G.; Tatchell, A.\,R. \emph{Vogel's Textbook of Practical Organic Chemistry}, 5th ed.; Longman: Harlow, 1989.
+\bibitem{Trost1991} Trost, B.\,M. The Atom Economy---A Search for Synthetic Efficiency. \emph{Science} \textbf{1991}, \emph{254}, 1471--1477.
+\end{thebibliography}
+
+\clearpage
+\section*{Data and Appendix}
+
+\textbf{A\quad Signed datasheet}
+
+\textbf{B\quad Residual solvent and yield}\cite{Handout}
+
+Integrals are relative to H$_a$ (1H) $=$ 1.00. The EtOAc singlet at $\delta$ 2.05 (3H) integrates to 0.0433. The EtOH quartet at $\delta$ 3.73 (2H) integrates to 0.0203.
+\[
+N_\text{EtOAc} = \frac{0.0433}{3} = 0.01443 \qquad N_\text{EtOH} = \frac{0.0203}{2} = 0.01015 \qquad N_\textbf{3} = 1.000
+\]
+\[
+\text{wt\%}_\textbf{3} = \frac{1.000 \times 488.63}{1.000 \times 488.63 + 0.01443 \times 88.11 + 0.01015 \times 46.07} \times 100\% = 99.645\%
+\]
+\[
+m_\text{pure} = 0.2030\ \text{g} \times 0.99645 = 0.20228\ \text{g}
+\]
+\[
+n_\text{benzil} = \frac{0.2080\ \text{g}}{210.23\ \text{g\,mol}^{-1}} = 0.98939\ \text{mmol} \qquad m_\text{theor} = 0.98939\ \text{mmol} \times 488.63\ \text{g\,mol}^{-1} = 0.48345\ \text{g}
+\]
+\[
+\text{Yield} = \frac{0.20228\ \text{g}}{0.48345\ \text{g}} \times 100\% = 41.84\% \approx 41.8\%
+\]
+
+\textbf{C\quad \textsuperscript{1}H NMR spectrum} (data set CM3191-Thurs-5TBI-Oct15-2026-One Pot-09)
+
+\textbf{D\quad IR spectrum} (KIMDONGHWAN\_Experiment 2, 15 October 2026)
+
+\textbf{E\quad X-ray crystal structure}\cite{XRD}
+
+\includepdf[pages=1,scale=0.92,pagecommand={\thispagestyle{plain}}]{datasheet_expt-o-2.pdf}
+
+\begin{figure}[p]
+\centering
+\includegraphics[width=\linewidth]{nmr_expt2.pdf}
+\caption*{C\quad \textsuperscript{1}H NMR spectrum of the recrystallised product (500 MHz, \ce{CDCl3}).}
+\end{figure}
+
+\begin{figure}[p]
+\centering
+\includegraphics[width=\linewidth]{ir_expt2.pdf}
+\caption*{D\quad IR spectrum of the recrystallised product (solid).}
+\end{figure}
+
+\begin{figure}[p]
+\centering
+\includegraphics[width=0.8\linewidth]{ortep_expt2.png}
+\caption*{E\quad Thermal ellipsoid plot of the major product, 50\% probability ellipsoids (handout numbering).\cite{XRD} Selected torsion angles H6A--C6--C7--H7A $-12.60$\si{\degree} and H6A--C6--C7--H7B 133.30\si{\degree}.}
+\end{figure}
+
+\end{document}

@@ -37,6 +37,20 @@ AY2026/27 Sem 1, CM3191 Chemical Synthesis Experiments (유기 + 무기). 이 �
 | [초안] | 저장소의 유기 보고서 초안(`organic/N/...Report Draft.tex`)과 그 참고문헌 |
 | [G] | 일반 화학 지식. 제공된 자료에는 없으므로 시험 전에 교재나 강의로 확인하세요 |
 | [추론] | 자료가 직접 말하지 않아 해석해서 적은 부분 |
+| [L3], [L4] | 유기 강의 슬라이드(Stereoselective reduction, Grignard and Schlenk line). `organic/Organic_Part_export/` |
+| [W2]~[W6] | 무기 주차별 준비 시트(영어+한국어). `inorganic/1/`, `inorganic/2/`의 `CM3191 Week N ... Bilingual.pdf` |
+| [X] | 유기 실험 2 X선 결정구조 핸드아웃. `organic/2/Handout for XRD (one pot aldol condensation DA reaction).pdf` |
+| [P] | 사용자의 무기 실험 1 proforma(제출본). `inorganic/1/Additional_Records/` |
+| [R], [R-Fc], [R-Suz], [R-AD], [R-Red], [R-Grig] | 사용자의 제출 보고서·초안(페로센, Suzuki, Aldol-DA, 환원, Grignard). `inorganic/2/`, `organic/N/` |
+| [D] | 사용자의 손글씨 datasheet 스캔(이미지 PDF). `inorganic/1/datasheet.pdf`, `inorganic/2/TalkFile_*.pdf`, `organic/N/*.pdf` |
+| [NMR] | NMR 원자료(Bruker zip)와 적분 결과. `inorganic/1/NMR_analysis/`, `organic/1/report/*_Source.zip`의 `analysis/results.json` |
+| [MS], [사진], [TLC] | ESI-MS 그림(`inorganic/1/SN9-*.docx`), 저장소 사진(`inorganic/2/*.JPG`, `organic/3/*.JPG`), TLC 사진 문서(`organic/4/TLC_photo.pdf`) |
+| [RA] | 위험성 평가서. `inorganic/2/CM3191_RA_Inorganic_Expt2_SessionII.pdf` |
+| [T-NMR], [T-MNova], [T-Fmt], [V] | 유기 교수의 기법 문서: 용매 질량 보정, MNova 주파수 확인, 보고서 형식, Grignard 비디오 지침. `organic/Organic_Part_export/` |
+| [S] | 저장소에 있는 2차 정리 문서(Beginner Guide, Bench Sheets, Bench Manual 등). 1차 자료가 아니므로 매뉴얼과 다르면 매뉴얼 우선 |
+| [참고] | 선배의 참고 보고서. `reference-reports/choi-se/` (이름·학번은 노트에 적지 않음) |
+| [Concepts] | 유기 실험 1 개념 정리 문서. `organic/1/CM3191 Organic Expt 1 Suzuki Concepts.pdf`(.tex) |
+| [Chrom] | 옛 크로마토그래피(TLC·column) 핸드아웃. 다른 모듈 자료이므로 기법 이론만 인용 |
 
 수치와 절차는 모두 AY26/27 매뉴얼 기준입니다. 작년 강의노트와 다른 점은 해당 위치에 "버전 차이"로 표시했습니다.
 
@@ -70,12 +84,16 @@ written-test-prep/
 | 안전 수칙 | `safety.md` |
 | crystal structure | `inorganic/04_crystal_structure.md`, `organic/02_exp2_aldol_DA.md`의 "X선 구조" 절 |
 | 계산 | 각 실험 문서의 "계산" 절 |
+| 각 단계의 존재 의의와 원리 | 각 실험 문서의 "단계별 존재 의의와 원리" 표 (2026-11-04 추가) |
+| 예상 관측 / 실제 관측값 | 각 실험 문서의 "예상 관측과 그 이유", "실제 관측·측정값 (사용자 데이터)" 절 |
+| 분석 기법의 원리 | `inorganic/03_theory_and_analysis.md`의 "분석 기법별 존재 의의·원리·예상·실제", `organic/05_techniques.md` |
+| 데이터 처리 | 각 실험 문서의 "데이터 처리 문제 풀이 예시" (사용자의 실제 숫자로 푼 예) |
 
 ## 5. 사용할 때 주의할 점
 
 1. 이 노트는 자료에서 읽은 내용을 정리한 것입니다. 정답을 보장하지 않으며, 실제 시험의 출제 방향은 확인되지 않았습니다.
 2. [G]와 [추론] 표시가 붙은 부분은 시험 전에 강의나 교재로 한 번 더 확인하세요.
-3. 실제 수행한 실험의 관찰과 측정값(수율, 스펙트럼 등)은 이 노트에 없습니다. 본인의 datasheet와 보고서를 함께 보세요.
+3. 실제 수행한 실험의 관찰과 측정값(수율, 녹는점, 스펙트럼 수치 등)은 2026-11-04부터 각 실험 문서의 "실제 관측·측정값 (사용자 데이터)" 절에 들어 있습니다. 출처는 사용자의 datasheet 스캔, proforma, 제출 보고서, NMR 원자료입니다. 이름과 학번은 어디에도 적지 않았습니다. 원본 datasheet와 보고서도 함께 보세요.
 4. 보고서 초안이 있는 유기 실험 1~4는 `organic/` 폴더의 `.tex`와 `.pdf`에 더 자세한 설명과 참고문헌이 있습니다. 이 노트는 그 내용을 시험용으로 줄여 놓았습니다.
 
 ## 6. 올해(AY26/27) 자료 반영 현황
@@ -83,9 +101,12 @@ written-test-prep/
 | 자료 | 위치 | 반영 |
 |---|---|---|
 | 유기 강의 슬라이드 L1 (Suzuki), L2 (Aldol/Diels-Alder) | `organic/Organic_Part_export/` | 반영 완료 (`organic/01`, `02`의 마지막 절 포함) |
-| 유기 실험 3, 4의 강의 슬라이드 | (저장소에 없음) | 매뉴얼과 본인 보고서 초안으로 대체. 슬라이드가 있으면 올려 주세요 |
+| 유기 강의 슬라이드 L3 (Stereoselective reduction), L4 (Grignard and Schlenk line) | `organic/Organic_Part_export/` | 반영 완료 (2026-11-04, `organic/03`, `04`의 추가 절) |
 | 무기 주차별 시트 Week 2~6 (영어+한국어) | `inorganic/1/`, `inorganic/2/`의 `CM3191 Week N ... Bilingual.pdf` | 반영 완료. 공식 슬라이드가 아니라 준비 시트(근거: 작년 매뉴얼 v0724 + 강의노트)로 보고 [W2]~[W6]로 표기 |
-| `TalkFile_Week5.pdf`, `TalkFile_Week6.pdf`, `TalkFile_Dadta Sheet.pdf` | `inorganic/2/` | 본인이 작성한 datasheet의 스캔(이름, 학번, 측정값, IR 스펙트럼이 포함됨)이라 개인 정보와 실측값은 노트에 넣지 않았습니다 |
+| `TalkFile_Week5.pdf`, `TalkFile_Week6.pdf`, `TalkFile_Dadta Sheet.pdf`, `inorganic/1/datasheet.pdf`, `Exp1-1.pdf`, `organic/N/*datasheet*.pdf` | `inorganic/`, `organic/` | 본인 datasheet 스캔. 측정값은 2026-11-04부터 노트의 "실제 관측·측정값" 절에 반영했고, 이름·학번은 넣지 않았습니다 |
+| 사용자 제출 보고서·proforma, NMR 원자료 | `inorganic/1/Additional_Records/`, `inorganic/1/NMR_analysis/`, `inorganic/2/2026-10-25/`, `organic/N/` | 2026-11-04 반영 완료 ([P], [R-*], [NMR]) |
+| X선 결정구조 핸드아웃 | `organic/2/Handout for XRD (...).pdf` | 2026-11-04 반영 완료 (`inorganic/04_crystal_structure.md`, `organic/02`의 "결정학 연결") |
+| 기법 문서: 용매 질량 보정(¹H NMR), MNova 주파수 확인, 보고서 형식, Grignard 비디오 지침, Schlenk line 준비 | `organic/Organic_Part_export/`, `organic/` | 2026-11-04 반영 완료 (`organic/05_techniques.md`와 각 실험 문서) |
 | 올해 무기 강의 슬라이드(Dr. Chan, AY26/27) | (저장소에 없음) | 이 노트의 무기 이론은 **작년(AY24/25) 강의노트**에 근거합니다. 올해 슬라이드가 있으면 올려 주세요 |
 
 **주의: 무기 매뉴얼이 두 종류입니다.** 올해 매뉴얼 `[v0626]`과 작년 매뉴얼 `[v0724]`은 시료량 등 몇몇 숫자가 다르고, 주차시트는 작년 값을 따릅니다. 차이표는 `inorganic/01_exp1_ruthenium.md`의 10절에 있습니다.
